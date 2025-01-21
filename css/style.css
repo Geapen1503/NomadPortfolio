@@ -1,0 +1,11 @@
+*{
+    font-family: sans-serif;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+}
