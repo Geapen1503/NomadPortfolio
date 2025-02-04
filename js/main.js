@@ -11,7 +11,7 @@ renderer.setClearColor(0x000000, 0);
 renderer.outputEncoding = THREE.sRGBEncoding;
 document.body.appendChild(renderer.domElement);
 
-const light = new THREE.DirectionalLight(0xffffff, 1);
+const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(5, 10, 7.5);
 scene.add(light);
 
