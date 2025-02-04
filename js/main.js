@@ -19,11 +19,12 @@ const loader = new GLTFLoader();
 const models = [];
 const spacing = 0.36;
 const numberOfModels = 13;
+let mixer;
 
 function createModel(xPosition) {
     return new Promise((resolve, reject) => {
         loader.load(
-            './model/bridge_model.glb',
+            './src/model/bridge_model.glb',
             (gltf) => {
                 const model = gltf.scene;
                 model.position.set(xPosition, camera.position.y - 0.25, camera.position.z - 0.3);
@@ -45,6 +46,22 @@ async function initModels() {
     }
 }
 
+function loadElephant() {
+    loader.load('./src/model/elephant.glb', (gltf) => {
+        const elephant = gltf.scene;
+        elephant.position.set(-0.02, 1.862, 4.69);
+        elephant.rotation.set(0, 1.6, 0);
+        elephant.scale.set(0.1, 0.1, 0.1);
+        scene.add(elephant);
+
+        mixer = new THREE.AnimationMixer(elephant);
+        if (gltf.animations.length > 0) {
+            const action = mixer.clipAction(gltf.animations[22]);
+            action.play();
+        }
+    });
+}
+
 function animate() {
     requestAnimationFrame(animate);
 
@@ -58,7 +75,12 @@ function animate() {
         }
     });
 
+    if (mixer) mixer.update(0.016);
+
     renderer.render(scene, camera);
 }
 
-initModels().then(() => animate());
+initModels().then(() => {
+    loadElephant();
+    animate();
+});
