@@ -13,6 +13,7 @@ const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 0);
 renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.domElement.classList.add('three-canvas');
 document.body.appendChild(renderer.domElement);
 
 const light = new THREE.DirectionalLight(0xffffff, 3);
@@ -77,22 +78,30 @@ const waterNormals = new THREE.TextureLoader().load(
 );
 
 const water = new Water(waterGeometry, {
-    textureWidth: 512,
-    textureHeight: 512,
+    textureWidth: 512, // default: 512, I set to 256 for better performance
+    textureHeight: 512, // default: 512, idem
     waterNormals: waterNormals,
     sunDirection: new THREE.Vector3(),
     sunColor: 0xffffff,
     waterColor: 0x001e0f,
     distortionScale: 8.0, // default 3.7, min 0.0, max 8.0
-    fog: scene.fog !== undefined
+    fog: scene.fog !== undefined,
+
 });
 
-// Sea settings
-water.material.uniforms.size.value = 10.0;
-
+water.material.uniforms['size'] = { value: 10.0 };
 water.rotation.x = -Math.PI / 2;
-water.position.y = -10;
+water.position.y = -10.3;
 scene.add(water);
+
+/*
+console.log(water.material.uniforms); // Pour voir si 'size' existe
+water.material.uniforms.size.value = 10.0;
+water.material.needsUpdate = true;
+Object.entries(water.material.uniforms).forEach(([key, val]) => {
+    console.log(`${key}:`, val.value);
+});*/
+
 
 // sky vars
 const sky = new Sky();
@@ -105,13 +114,13 @@ const sceneEnv = new THREE.Scene();
 
 const skyUniforms = sky.material.uniforms;
 skyUniforms['turbidity'].value = 4; // default: 10, lighting beyond the sun
-skyUniforms['rayleigh'].value = 2; // default: 2, sunset orangeness variation
-skyUniforms['mieCoefficient'].value = 0.005; // default: 0.005, idk you're on your own with that one
+skyUniforms['rayleigh'].value = 2.2; // default: 2, sunset orangeness variation
+skyUniforms['mieCoefficient'].value = 0.004; // default: 0.005, idk you're on your own with that one
 skyUniforms['mieDirectionalG'].value = 0.8; // default: 0.8, ugh... stickiness of the light around the sun ?
 
 // Sky settings
 const parameters = {
-    elevation: 0.0,
+    elevation: -0.4,
     azimuth: 130
 };
 
