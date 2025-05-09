@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 *{
     font-family: sans-serif;
     user-select: none;
     scroll-behavior: smooth;
+}
+
+:root { /* Mainbox size and margin top for 3D window */
+    --mainbox-height: 200vw;
+    --mainbox-3D-height-margin: -200vw;
 }
 
 body {
@@ -10,10 +17,119 @@ body {
     background-color: white;
 }
 
-#mountainBackground {
+#MainBox {
     display: flex;
-    position: absolute;
+    width: 100%;
+    height: var(--mainbox-height);
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: deeppink;
+}
+
+.three-canvas {
+    display: flex;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    margin-top: var(--mainbox-3D-height-margin);
+    object-fit: cover;
+    position: relative;
 }
+
+div.introBox {
+    display: flex;
+    width: 100%;
+    height: 55vw;
+    flex-direction: column;
+    margin-top: -148vw;
+    object-fit: cover;
+    position: relative;
+}
+
+div.topIntroBox {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+}
+
+div.textIntroBox {
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+h1.introTitle1 {
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    margin-top: 2vw;
+    margin-left: 3vw;
+    font-weight: 500;
+    font-size: 8vw;
+    color: #CB8011;
+}
+
+h2.introTitle2 {
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    margin-top: 9.5vw;
+    margin-left: -46.2vw;
+    font-weight: 500;
+    font-size: 8vw;
+    color: #CB8011;
+}
+
+div.smallIntroTextBox {
+    display: flex;
+    width: 50vw;
+    height: 8vw;
+    position: absolute;
+    align-self: end;
+
+/*    background-color: white; */
+}
+
+p.workText {
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    margin-top: 0.1vw;
+    margin-left: 3.7vw;
+    font-size: 1vw;
+    color: #CB8011;
+}
+
+p.ageText {
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    margin-top: 0.1vw;
+    margin-left: 28vw;
+    font-size: 1vw;
+    color: #CB8011;
+}
+
+div.profileBox {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+img.theoProfilePic {
+    display: flex;
+    width: 15vw;
+    height: 15vw;
+    margin-top: -2vw;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 3;
+}
+
+div.bottomIntroBox {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
