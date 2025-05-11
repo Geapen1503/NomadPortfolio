@@ -54,7 +54,13 @@ async function initModels() {
 function loadElephant() {
     loader.load('./src/model/elephant.glb', (gltf) => {
         const elephant = gltf.scene;
-        elephant.position.set(-0.02, 1.862, 4.69);
+        //elephant.position.set(-0.02, 1.862, 4.69);
+        elephant.position.set(
+            camera.position.x - 0.02,
+            camera.position.y - 0.138,
+            camera.position.z - 0.31
+        );
+
         elephant.rotation.set(0, 1.6, 0);
         elephant.scale.set(0.1, 0.1, 0.1);
         scene.add(elephant);
@@ -161,4 +167,31 @@ function animate() {
 initModels().then(() => {
     loadElephant();
     animate();
+
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.transition = 'opacity 0.5s ease';
+        loader.style.opacity = 0;
+        setTimeout(() => loader.remove(), 500);
+    }
+
+    document.body.classList.add('loaded');
+
+    setTimeout(() => {
+        const mask = document.getElementById('loading-mask');
+        if (mask) mask.remove();
+    }, 2000);
 });
+
+window.addEventListener('resize', onWindowResize, false);
+
+function onWindowResize() {
+    const aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = aspect;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    //if (aspect < 1) camera.position.set(0, 2.08, 5.1); // Phone recoil
+    if (aspect > 1) camera.position.set(0, 2, 5); // Regular screen
+}

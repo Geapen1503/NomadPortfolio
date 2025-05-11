@@ -9,6 +9,9 @@
 :root { /* Mainbox size and margin top for 3D window */
     --mainbox-height: 200vw;
     --mainbox-3D-height-margin: -200vw;
+    --mainbox-phone-height: 400vw;
+    --mainbox-phone-3D-height-margin: -400vw;
+    --based-orange: #CB8011; /* darker : #BD5013 or lighter : #CB8011 */
 }
 
 body {
@@ -16,6 +19,136 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color: white;
 }
+
+/* loader beginning */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--based-orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loaderText {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-top: 2vw;
+    color: white;
+}
+
+/*.loaderText::after {
+    display: inline-block;
+    animation: dotty steps(1,end) 1s infinite;
+    content: '';
+}
+
+@keyframes dotty {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+    100% { content: ''; }
+}*/
+
+.loader-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--based-orange);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+.mask-bar {
+    flex: 1;
+    background: var(--based-orange);
+    transform: translateY(0);
+    transition: transform 1.3s ease-in-out;
+}
+
+body.loaded .bar1 {
+    transform: translateY(-100%);
+    transition-delay: 0s;
+}
+body.loaded .bar2 {
+    transform: translateY(-200%);
+    transition-delay: 0.15s;
+}
+body.loaded .bar3 {
+    transform: translateY(-140%);
+    transition-delay: 0.05s;
+}
+body.loaded .bar4 {
+    transform: translateY(-250%);
+    transition-delay: 0.2s;
+}
+body.loaded .bar5 {
+    transform: translateY(-170%);
+    transition-delay: 0.1s;
+}
+
+body.loaded .bar6 {
+    transform: translateY(-190%);
+    transition-delay: 0.12s;
+}
+body.loaded .bar7 {
+    transform: translateY(-220%);
+    transition-delay: 0.18s;
+}
+body.loaded .bar8 {
+    transform: translateY(-160%);
+    transition-delay: 0.06s;
+}
+body.loaded .bar9 {
+    transform: translateY(-240%);
+    transition-delay: 0.22s;
+}
+body.loaded .bar10 {
+    transform: translateY(-180%);
+    transition-delay: 0.08s;
+}
+
+@keyframes slideUp1 {
+    to { transform: translateY(-110vh); }
+}
+@keyframes slideUp2 {
+    to { transform: translateY(-70vh); }
+}
+@keyframes slideUp3 {
+    to { transform: translateY(-130vh); }
+}
+@keyframes slideUp4 {
+    to { transform: translateY(-90vh); }
+}
+@keyframes slideUp5 {
+    to { transform: translateY(-150vh); }
+}
+
+/* loader end */
 
 #MainBox {
     display: flex;
@@ -66,7 +199,7 @@ h1.introTitle1 {
     margin-left: 3vw;
     font-weight: 500;
     font-size: 8vw;
-    color: #CB8011;
+    color: var(--based-orange);
 }
 
 h2.introTitle2 {
@@ -76,7 +209,7 @@ h2.introTitle2 {
     margin-left: -46.2vw;
     font-weight: 500;
     font-size: 8vw;
-    color: #CB8011;
+    color: var(--based-orange);
 }
 
 div.smallIntroTextBox {
@@ -96,7 +229,7 @@ p.workText {
     margin-top: 0.1vw;
     margin-left: 3.7vw;
     font-size: 1vw;
-    color: #CB8011;
+    color: var(--based-orange);
 }
 
 p.ageText {
@@ -106,7 +239,7 @@ p.ageText {
     margin-top: 0.1vw;
     margin-left: 28vw;
     font-size: 1vw;
-    color: #CB8011;
+    color: var(--based-orange);
 }
 
 div.profileBox {
@@ -133,3 +266,85 @@ div.bottomIntroBox {
     height: 50%;
 }
 
+@media (max-width: 768px) {
+    .loaderText {
+        font-size: 4vw;
+        margin-top: 6vw;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        text-align: center;
+    }
+
+    #MainBox {
+        height: var(--mainbox-phone-height);
+    }
+
+    .three-canvas {
+        margin-top: var(--mainbox-phone-3D-height-margin);
+    }
+
+    div.introBox {
+        height: 216vw;
+        margin-top: -184vw;
+
+        z-index: 5;
+/*        background-color: green;*/
+    }
+
+    div.topIntroBox {
+        flex-direction: column;
+
+/*        background-color: brown;*/
+    }
+
+    div.textIntroBox {
+        height: 40%;
+        width: 100%;
+        justify-content: center;
+
+/*        background-color: pink;*/
+    }
+
+    h1.introTitle1 {
+        font-size: 16.5vw;
+        margin-top: -1vw;
+        margin-left: -22vw;
+
+    }
+
+    h2.introTitle2 {
+        font-size: 16.5vw;
+        margin-top: 13vw;
+        margin-left: -75vw;
+    }
+
+    div.smallIntroTextBox {
+        width: 100vw;
+
+/*        background-color: white;*/
+    }
+
+    p.workText {
+        font-size: 4vw;
+        margin-top: 1vw;
+        margin-left: 3vw;
+    }
+
+    p.ageText {
+        font-size: 4vw;
+        margin-top: 1vw;
+        margin-left: 25vw;
+    }
+
+    div.profileBox {
+        height: 60%;
+        width: 100%;
+
+        /*background-color: blue;*/
+    }
+
+    img.theoProfilePic {
+        width: 45vw;
+        height: 45vw;
+    }
+}
