@@ -26,6 +26,9 @@ const spacing = 0.36;
 const numberOfModels = 13;
 let mixer;
 
+let shouldMove = false;
+
+
 function createModel(xPosition) {
     return new Promise((resolve, reject) => {
         loader.load(
@@ -45,8 +48,11 @@ function createModel(xPosition) {
 }
 
 async function initModels() {
+    const visibleBridges = 3;
+    const offset = -spacing * visibleBridges;
+
     for (let i = 0; i < numberOfModels; i++) {
-        const model = await createModel(i * spacing);
+        const model = await createModel(i * spacing + offset);
         models.push(model);
     }
 }
@@ -67,8 +73,30 @@ function loadElephant() {
 
         mixer = new THREE.AnimationMixer(elephant);
         if (gltf.animations.length > 0) {
-            const action = mixer.clipAction(gltf.animations[22]);
-            action.play();
+            const standUpAction = mixer.clipAction(gltf.animations[26]); // Wakeup
+            const idleAction = mixer.clipAction(gltf.animations[15]); // idle
+            const runAction = mixer.clipAction(gltf.animations[22]); // Running
+
+            standUpAction.setLoop(THREE.LoopOnce);
+            standUpAction.clampWhenFinished = true;
+            standUpAction.play();
+
+            mixer.addEventListener('finished', (e) => {
+                if (e.action === standUpAction) {
+                    idleAction.play();
+
+                    setTimeout(() => {
+                        mixer.stopAllAction();
+
+                        runAction.reset();
+                        runAction.setEffectiveTimeScale(1);
+                        runAction.setEffectiveWeight(1);
+                        runAction.play();
+
+                        shouldMove = true;
+                    }, 2000);
+                }
+            });
         }
     });
 }
@@ -147,15 +175,17 @@ updateSun();
 function animate() {
     requestAnimationFrame(animate);
 
-    models.forEach((model) => {
-        model.position.x -= 0.0038;
+    if (shouldMove) {
+        models.forEach((model) => {
+            model.position.x -= 0.0038;
 
-        if (model.position.x < -spacing * 2) {
-            const lastModel = models[models.length - 1];
-            model.position.x = lastModel.position.x + spacing;
-            models.push(models.shift());
-        }
-    });
+            if (model.position.x < -spacing * 2) {
+                const lastModel = models[models.length - 1];
+                model.position.x = lastModel.position.x + spacing;
+                models.push(models.shift());
+            }
+        });
+    }
 
     if (mixer) mixer.update(0.016);
 
