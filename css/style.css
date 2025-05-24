@@ -11,7 +11,14 @@
     --mainbox-3D-height-margin: -200vw;
     --mainbox-phone-height: 400vw;
     --mainbox-phone-3D-height-margin: -400vw;
-    --based-orange: #CB8011; /* darker : #BD5013 or lighter : #CB8011 */
+    --external-darker-orange: #BD5013;
+    --alku-light-orange: #EC8C00;
+    --alku-based-orange: #CB8011;
+    --alku-light-blue: #55677A;
+    --alku-dark-blue: #364B62;
+    --alku-based-purple: #6B3DC1;
+    --space-grey: #525E65;
+    --bridge-grey: #4C4D4D;
 }
 
 body {
@@ -28,7 +35,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--based-orange);
+    background-color: var(--alku-based-orange);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,8 +66,8 @@ body {
 }*/
 
 .loader-spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid var(--based-orange);
+    border: 8px solid white;
+    border-top: 8px solid var(--alku-based-orange);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -85,7 +92,7 @@ body {
 
 .mask-bar {
     flex: 1;
-    background: var(--based-orange);
+    background: var(--alku-based-orange);
     transform: translateY(0);
     transition: transform 1.3s ease-in-out;
 }
@@ -150,6 +157,49 @@ body.loaded .bar10 {
 
 /* loader end */
 
+/* navbar beginning */
+
+#navbarBox {
+    display: flex;
+    width: 100%;
+    height: 3vw;
+    position: fixed;
+    flex-direction: row;
+    z-index: 5;
+    background-color: hotpink;
+}
+
+.headerBoxShadow{
+    backdrop-filter: blur(4px);
+    box-shadow: 0px 0px 10px black;
+}
+
+.buttonBox{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-right: -2vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navButton{
+    display: flex;
+    color: var(--alku-based-orange);
+    font-weight: bold;
+    font-size: 1vw;
+    text-decoration: none;
+    background: linear-gradient(to top, var(--external-darker-orange), var(--external-darker-orange) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size 0.5s;
+}
+
+.navButton:hover{
+    color: var(--external-darker-orange);
+    background-size: 100% 100%;
+}
+
+/* navbar end*/
+
 #MainBox {
     display: flex;
     width: 100%;
@@ -157,7 +207,7 @@ body.loaded .bar10 {
     flex-direction: column;
     justify-content: center;
 
-    background-color: deeppink;
+    background-color: white;
 }
 
 .three-canvas {
@@ -172,11 +222,13 @@ body.loaded .bar10 {
 div.introBox {
     display: flex;
     width: 100%;
-    height: 55vw;
+    height: 53.9vw;
     flex-direction: column;
-    margin-top: -148vw;
+    margin-top: -142.6vw;
     object-fit: cover;
     position: relative;
+
+    background-color: green;
 }
 
 div.topIntroBox {
@@ -199,7 +251,7 @@ h1.introTitle1 {
     margin-left: 3vw;
     font-weight: 500;
     font-size: 8vw;
-    color: var(--based-orange);
+    color: var(--alku-based-orange);
 }
 
 h2.introTitle2 {
@@ -209,7 +261,7 @@ h2.introTitle2 {
     margin-left: -46.2vw;
     font-weight: 500;
     font-size: 8vw;
-    color: var(--based-orange);
+    color: var(--alku-based-orange);
 }
 
 div.smallIntroTextBox {
@@ -229,7 +281,7 @@ p.workText {
     margin-top: 0.1vw;
     margin-left: 3.7vw;
     font-size: 1vw;
-    color: var(--based-orange);
+    color: var(--alku-based-orange);
 }
 
 p.ageText {
@@ -239,7 +291,7 @@ p.ageText {
     margin-top: 0.1vw;
     margin-left: 28vw;
     font-size: 1vw;
-    color: var(--based-orange);
+    color: var(--alku-based-orange);
 }
 
 div.profileBox {
@@ -265,6 +317,8 @@ div.bottomIntroBox {
     width: 100%;
     height: 50%;
 }
+
+
 
 @media (max-width: 768px) {
     .loaderText {

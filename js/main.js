@@ -27,6 +27,9 @@ const numberOfModels = 13;
 let mixer;
 
 let shouldMove = false;
+let moveSpeed = 0;
+const maxMoveSpeed = 0.0038;
+let isAccelerating = false;
 
 
 function createModel(xPosition) {
@@ -57,13 +60,22 @@ async function initModels() {
     }
 }
 
+function playExclusive(action) {
+    mixer.stopAllAction();
+    action.reset();
+    action.setEffectiveWeight(1);
+    action.setEffectiveTimeScale(1);
+    action.play();
+}
+
+
 function loadElephant() {
-    loader.load('./src/model/elephant.glb', (gltf) => {
+    loader.load('./src/model/elephant_transition.glb', (gltf) => {
         const elephant = gltf.scene;
         //elephant.position.set(-0.02, 1.862, 4.69);
         elephant.position.set(
             camera.position.x - 0.02,
-            camera.position.y - 0.138,
+            camera.position.y - 0.132,
             camera.position.z - 0.31
         );
 
@@ -73,30 +85,36 @@ function loadElephant() {
 
         mixer = new THREE.AnimationMixer(elephant);
         if (gltf.animations.length > 0) {
-            const standUpAction = mixer.clipAction(gltf.animations[26]); // Wakeup
-            const idleAction = mixer.clipAction(gltf.animations[15]); // idle
-            const runAction = mixer.clipAction(gltf.animations[22]); // Running
+            const standUpAction = mixer.clipAction(THREE.AnimationClip.findByName(gltf.animations, 'TRS|standUpToIdle')); // 26 Wakeup
+            const idleAction = mixer.clipAction(THREE.AnimationClip.findByName(gltf.animations, 'TRS|idleToRun')); // 15 idle
+            const runAction = mixer.clipAction(THREE.AnimationClip.findByName(gltf.animations, 'TRS|run')); // 22 Running
 
             standUpAction.setLoop(THREE.LoopOnce);
             standUpAction.clampWhenFinished = true;
             standUpAction.play();
 
+            standUpAction.setLoop(THREE.LoopOnce);
+            standUpAction.clampWhenFinished = true;
+            playExclusive(standUpAction);
+
             mixer.addEventListener('finished', (e) => {
                 if (e.action === standUpAction) {
-                    idleAction.play();
+                    idleAction.setLoop(THREE.LoopOnce);
+                    idleAction.clampWhenFinished = true;
+                    playExclusive(idleAction);
+
+                    const delayBeforeRun = 3300;
 
                     setTimeout(() => {
-                        mixer.stopAllAction();
-
-                        runAction.reset();
-                        runAction.setEffectiveTimeScale(1);
-                        runAction.setEffectiveWeight(1);
-                        runAction.play();
-
-                        shouldMove = true;
-                    }, 2000);
+                        isAccelerating = true;
+                    }, delayBeforeRun);
+                } else if (e.action === idleAction) {
+                    runAction.setLoop(THREE.LoopRepeat);
+                    playExclusive(runAction);
+                    isAccelerating = true;
                 }
             });
+
         }
     });
 }
@@ -175,9 +193,17 @@ updateSun();
 function animate() {
     requestAnimationFrame(animate);
 
-    if (shouldMove) {
+    if (isAccelerating || moveSpeed > 0) {
+        if (isAccelerating && moveSpeed < maxMoveSpeed) {
+            moveSpeed += 0.0001;
+            if (moveSpeed >= maxMoveSpeed) {
+                moveSpeed = maxMoveSpeed;
+                isAccelerating = false;
+            }
+        }
+
         models.forEach((model) => {
-            model.position.x -= 0.0038;
+            model.position.x -= moveSpeed;
 
             if (model.position.x < -spacing * 2) {
                 const lastModel = models[models.length - 1];
