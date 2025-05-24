@@ -7,9 +7,9 @@
 }
 
 :root { /* Mainbox size and margin top for 3D window */
-    --mainbox-height: 200vw;
+    --mainbox-height: 300vw;
     --mainbox-3D-height-margin: -200vw;
-    --mainbox-phone-height: 400vw;
+    --mainbox-phone-height: 600vw;
     --mainbox-phone-3D-height-margin: -400vw;
     --external-darker-orange: #BD5013;
     --alku-light-orange: #EC8C00;
@@ -157,78 +157,35 @@ body.loaded .bar10 {
 
 /* loader end */
 
-/* navbar beginning */
-
-#navbarBox {
-    display: flex;
-    width: 100%;
-    height: 3vw;
-    position: fixed;
-    flex-direction: row;
-    z-index: 5;
-    background-color: hotpink;
-}
-
-.headerBoxShadow{
-    backdrop-filter: blur(4px);
-    box-shadow: 0px 0px 10px black;
-}
-
-.buttonBox{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin-right: -2vw;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.navButton{
-    display: flex;
-    color: var(--alku-based-orange);
-    font-weight: bold;
-    font-size: 1vw;
-    text-decoration: none;
-    background: linear-gradient(to top, var(--external-darker-orange), var(--external-darker-orange) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-    transition: background-size 0.5s;
-}
-
-.navButton:hover{
-    color: var(--external-darker-orange);
-    background-size: 100% 100%;
-}
-
-/* navbar end*/
-
 #MainBox {
     display: flex;
     width: 100%;
     height: var(--mainbox-height);
     flex-direction: column;
-    justify-content: center;
-
     background-color: white;
+    position: relative;
+}
+
+#canvasWrapperBox {
+    position: relative;
+    width: 100%;
+    height: 53.89vw;
 }
 
 .three-canvas {
-    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    margin-top: var(--mainbox-3D-height-margin);
-    object-fit: cover;
-    position: relative;
+    z-index: 1;
 }
 
-div.introBox {
-    display: flex;
-    width: 100%;
-    height: 53.9vw;
-    flex-direction: column;
-    margin-top: -142.6vw;
-    object-fit: cover;
+.introBox {
     position: relative;
-
-    background-color: green;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
 }
 
 div.topIntroBox {
@@ -318,6 +275,57 @@ div.bottomIntroBox {
     height: 50%;
 }
 
+#InternalMainBox {
+    display: flex;
+    width: 100%;
+    height: 200vw;
+
+    background-color: brown;
+}
+
+/* navbar beginning */
+
+#navbarBox {
+    display: flex;
+    width: 100%;
+    height: 3vw;
+    /*    position: relative;*/
+    flex-direction: row;
+    z-index: 5;
+    background-color: hotpink;
+}
+
+.headerBoxShadow{
+    backdrop-filter: blur(4px);
+    box-shadow: 0px 0px 10px black;
+}
+
+.buttonBox{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-right: -2vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navButton{
+    display: flex;
+    color: var(--alku-based-orange);
+    font-weight: bold;
+    font-size: 1vw;
+    text-decoration: none;
+    background: linear-gradient(to top, var(--external-darker-orange), var(--external-darker-orange) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size 0.5s;
+}
+
+.navButton:hover{
+    color: var(--external-darker-orange);
+    background-size: 100% 100%;
+}
+
+/* navbar end*/
+
 
 
 @media (max-width: 768px) {
@@ -333,16 +341,16 @@ div.bottomIntroBox {
         height: var(--mainbox-phone-height);
     }
 
+    #canvasWrapperBox {
+        height: 216vw;
+    }
+
     .three-canvas {
-        margin-top: var(--mainbox-phone-3D-height-margin);
+
     }
 
     div.introBox {
-        height: 216vw;
-        margin-top: -184vw;
-
-        z-index: 5;
-/*        background-color: green;*/
+        z-index: 2;
     }
 
     div.topIntroBox {
