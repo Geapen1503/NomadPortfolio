@@ -74,7 +74,7 @@ function loadElephant() {
         const elephant = gltf.scene;
         //elephant.position.set(-0.02, 1.862, 4.69);
         elephant.position.set(
-            camera.position.x - 0.02,
+            camera.position.x - 0.04,
             camera.position.y - 0.132,
             camera.position.z - 0.31
         );
