@@ -582,7 +582,72 @@ p.whoAmIText {
 
     /* navbar end*/
 
+    /* Who Am I Box beginnning */
+
     .whoAmIBox {
-        height: 207vw;
+        height: 260vw;
     }
+
+    .whoAmIInternalBox {
+        width: 92%;
+        height: 75%;
+        margin-top: 1vw;
+    }
+
+    .wAIIntTopBox {
+        flex-direction: column;
+    }
+
+    .wAIIntLeftTopBox {
+        display: flex;
+        height: 60%;
+        width: 100%;
+        justify-content: center;
+    }
+    div.wAiProfilePicBackground {
+        width: 78vw;
+        height: 45vw;
+        margin-top: 0.1vw;
+        margin-left: -3.5vw;
+    }
+    img.wAITheoProfilePic {
+        width: 78vw;
+        height: 45vw;
+        margin-top: 3.5vw;
+        margin-left: 4vw;
+    }
+
+    .wAIIntRightTopBox {
+        height: 40%;
+        width: 100%;
+    }
+
+    .whoAmITitle {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+        font-size: 15vw;
+        margin-top: -0.3vw;
+        transform: scale(1, 1.5);
+        text-align: center;
+        color: var(--alku-based-orange);
+    }
+
+    .wAIIntBottomBox {
+        margin-top: -10vw;
+
+    }
+
+    p.whoAmIText {
+        font-size: 3vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .highlightedWAIText {
+        font-size: 3vw;
+    }
+
+    /* Who Am I Box Ending */
+
+
 }
