@@ -332,6 +332,17 @@ div.bottomIntroBox {
     background-size: 100% 100%;
 }
 
+#navbarBox.on-orange .navButton {
+    color: white !important;
+    background: linear-gradient(to top, white, white 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size 0.5s;
+}
+
+#navbarBox.on-orange .navButton:hover {
+    color: white !important;
+    background-size: 100% 100%;
+}
+
 /* navbar end*/
 
 /* Who Am I Box beginnning */
@@ -373,7 +384,7 @@ div.wAiProfilePicBackground {
     position: absolute;
     width: 28vw;
     height: 15vw;
-    background-color: lightblue;
+    background-color: var(--alku-based-orange);
 }
 
 img.wAITheoProfilePic {
@@ -430,6 +441,19 @@ p.whoAmIText {
 
 /* Who Am I Box Ending */
 
+/* ProjectBox Beginning*/
+
+div.projectBox {
+    display: flex;
+    width: 100%;
+    height: 60vw;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--alku-based-orange);
+}
+
+/* ProjectBox Ending */
 
 @media (max-width: 768px) {
     .loaderText {
@@ -524,6 +548,19 @@ p.whoAmIText {
         color: var(--alku-based-orange);
         cursor: pointer;
         z-index: 20;
+    }
+
+    #navbarBox.on-orange .burgerMenu {
+        color: white !important;
+    }
+
+    #navbarBox.on-orange .navButton {
+        color: white !important;
+    }
+
+    #navbarBox.on-orange .navButton:hover {
+        color: white !important;
+        background-size: 100% 100%;
     }
 
     .buttonBox {
