@@ -258,39 +258,22 @@ function onWindowResize() {
 document.addEventListener('DOMContentLoaded', () => {
     const canvasBox = document.getElementById('canvasWrapperBox');
     const navbar = document.getElementById('navbarBox');
+    const internalMainBox = document.getElementById("InternalMainBox");
     let firstScrollDone = false;
     let scrollInProgress = false;
 
-    const navbarInitialTop = navbar.offsetTop;
+    const navbarInitialTop = internalMainBox.getBoundingClientRect().top + window.pageYOffset;
 
-    /*canvasBox.addEventListener('wheel', (e) => {
-        if (e.deltaY > 0 && window.pageYOffset === 0 && !firstScrollDone && !scrollInProgress) {
-            e.preventDefault();
-            scrollInProgress = true;
-            firstScrollDone = true;
+    function updateNavbarShadow() {
+        if (window.pageYOffset >= navbarInitialTop) navbar.classList.add("headerBoxShadow");
+        else navbar.classList.remove("headerBoxShadow");
+    }
 
-            const targetY = navbar.getBoundingClientRect().top + window.pageYOffset;
-
-            window.scrollTo({
-                top: targetY,
-                behavior: 'smooth',
-            });
-
-            const lockDuration = 800;
-            const scrollBlocker = (event) => event.preventDefault();
-
-            window.addEventListener('wheel', scrollBlocker, { passive: false });
-            window.addEventListener('touchmove', scrollBlocker, { passive: false });
-
-            setTimeout(() => {
-                window.removeEventListener('wheel', scrollBlocker);
-                window.removeEventListener('touchmove', scrollBlocker);
-                scrollInProgress = false;
-            }, lockDuration);
-        }
-    }, { passive: false });*/
+    updateNavbarShadow();
 
     window.addEventListener('scroll', () => {
+        updateNavbarShadow();
+
         if (window.pageYOffset === 0 && !scrollInProgress) firstScrollDone = false;
 
         if (window.pageYOffset >= navbarInitialTop) navbar.classList.add("headerBoxShadow");
