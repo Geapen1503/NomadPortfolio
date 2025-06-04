@@ -6,8 +6,12 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root { /* Mainbox size and margin top for 3D window */
-    --mainbox-height: 300vw;
+    --mainbox-height: 500vw;
     --mainbox-3D-height-margin: -200vw;
     --mainbox-phone-height: 900vw;
     --mainbox-phone-3D-height-margin: -400vw;
@@ -278,7 +282,7 @@ div.bottomIntroBox {
 #InternalMainBox {
     display: flex;
     width: 100%;
-    height: 200vw;
+    height: 300vw;
     margin-top: -3vw;
     flex-direction: column;
 
@@ -317,14 +321,14 @@ div.bottomIntroBox {
     align-items: center;
 }
 
-.navButton{
+.navButton {
     display: flex;
     color: var(--alku-based-orange);
     font-weight: bold;
     font-size: 1vw;
     text-decoration: none;
     background: linear-gradient(to top, var(--external-darker-orange), var(--external-darker-orange) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-    transition: background-size 0.5s;
+    transition: background-size 0.5s, color 0.5s ease;
 }
 
 .navButton:hover{
@@ -335,13 +339,18 @@ div.bottomIntroBox {
 #navbarBox.on-orange .navButton {
     color: white !important;
     background: linear-gradient(to top, white, white 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
-    transition: background-size 0.5s;
+    transition: background-size 0.5s, color 0.5s ease;
 }
 
 #navbarBox.on-orange .navButton:hover {
     color: white !important;
     background-size: 100% 100%;
 }
+
+/*.burgerMenu,
+.navButton {
+    transition: color 0.8s ease;
+}*/
 
 /* navbar end*/
 
@@ -437,21 +446,78 @@ p.whoAmIText {
     color: var(--alku-based-orange);
 }
 
-
-
 /* Who Am I Box Ending */
+
 
 /* ProjectBox Beginning*/
 
 div.projectBox {
     display: flex;
     width: 100%;
-    height: 60vw;
+    height: 80vw;
     justify-content: center;
     align-items: center;
 
     background-color: var(--alku-based-orange);
 }
+
+div.internalProjectBox {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+
+    background-color: blue;
+}
+
+div.projectTopBox {
+    width: 100%;
+    height: 35%;
+
+    background-color: greenyellow;
+}
+
+div.projectBottomBox {
+    display: flex;
+    width: 100%;
+    height: 65%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: lightblue;
+}
+
+.myProjectsDefaultBox {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--bridge-grey);
+}
+
+h2.myProjectsDefaultTitle {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    font-size: 5vw;
+    margin-top: 1vw;
+
+    color: var(--alku-based-orange);
+}
+
+p.myProjectsDefaultText{
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    font-size: 0.95vw;
+    margin-top: -1vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    color: white;
+    text-align: justify;
+}
+
 
 /* ProjectBox Ending */
 
