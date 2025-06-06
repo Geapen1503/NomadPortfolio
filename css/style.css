@@ -473,8 +473,6 @@ div.internalProjectBox {
 div.projectTopBox {
     width: 100%;
     height: 35%;
-
-
 }
 
 .carouselContainer {
@@ -537,6 +535,7 @@ div.projectCard {
 }
 
 div.projectCard:hover {
+    cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
