@@ -12,8 +12,8 @@ const waterNormals = new THREE.TextureLoader().load(
 );
 
 const water = new Water(waterGeometry, {
-    textureWidth: 512, // default: 512, I set to 256 for better performance
-    textureHeight: 512, // default: 512, idem
+    textureWidth: 256, // default: 512, I set to 256 for better performance
+    textureHeight: 256, // default: 512, idem
     waterNormals: waterNormals,
     sunDirection: new THREE.Vector3(),
     sunColor: 0xffffff,

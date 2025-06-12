@@ -11,11 +11,15 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 2, 5);
 
 const canvas = document.getElementById('threeCanvas');
-const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: false, antialias: true });
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 0);
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NoToneMapping;
+//renderer.outputEncoding = THREE.sRGBEncoding;
+
+onWindowResize();
 
 const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(5, 10, 7.5);
@@ -23,16 +27,15 @@ scene.add(light);
 
 function onWindowResize() {
     const width = window.innerWidth;
-    const height = window.innerWidth * (9 / 16);
-    const aspect = width / height;
+    const height = window.innerHeight;
 
-    camera.aspect = aspect;
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
     renderer.setSize(width, height);
-
-    if (width < 768) camera.position.set(0, 2.08, 5.1);
-    else camera.position.set(0, 2, 5);
+    //renderer.setPixelRatio(window.devicePixelRatio);
 }
+
+
 
 export { scene, camera, renderer, onWindowResize };
