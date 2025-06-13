@@ -7,6 +7,7 @@ import './ui/navbar.js';
 import './ui/burgerMenu.js';
 import './ui/scrollLogic.js';
 import './ui/carousel.js';
+import './ui/projectsUnfold';
 
 initModels().then(() => {
     loadElephant();

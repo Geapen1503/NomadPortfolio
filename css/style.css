@@ -615,6 +615,69 @@ p.myProjectsDefaultText{
 }
 
 
+.projectBottomBox {
+    position: relative;
+    overflow: hidden;
+}
+
+.myProjectsDefaultBox {
+    z-index: 1;
+}
+
+.projectDetailBox {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--alku-light-blue);
+    overflow: hidden;
+    transition: height 0.5s ease;
+    z-index: 2;
+    padding: 0 3vw;
+    box-sizing: border-box;
+}
+
+.projectBottomBox.open .projectDetailBox {
+    height: 100%;
+}
+
+.projectDetailBox .detail-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 4vw;
+    color: var(--alku-based-orange);
+    margin: 1vw 0;
+}
+
+.projectDetailBox .detail-text {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1vw;
+    line-height: 1.4;
+    color: white;
+    text-align: justify;
+    margin-bottom: 1.5vw;
+}
+
+.projectDetailBox .detail-image {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto 2vw;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.projectDetailBox .detail-close {
+    position: absolute;
+    bottom: 1.5vw;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    font-size: 2.5vw;
+    cursor: pointer;
+    color: white;
+    padding: 0.5vw 1vw;
+    border-radius: 2vw;
+    line-height: 1;
+}
+
 /* ProjectBox Ending */
 
 @media (max-width: 768px) {
