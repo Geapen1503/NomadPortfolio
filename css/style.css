@@ -525,7 +525,8 @@ div.projectTopBox {
 div.projectCard {
     display: flex;
     height: 20vw;
-    width: 15vw;
+    min-width: 15vw;
+    max-width: 15vw;
     align-items: center;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);

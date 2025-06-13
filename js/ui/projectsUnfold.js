@@ -22,7 +22,22 @@ const projectData = {
         title: "Alkubot",
         text: "Bot Discord en Python utilisant discord.py, commandes modération, musique et mini-jeux.",
         img: "alkubot-detail.png"
-    }
+    },
+    oldPortfolio: {
+        title: "Old Space Portfolio",
+        text: "My old portfolio that I made during Highschool",
+        img: "old-portfolio.png"
+    },
+    gsb: {
+        title: "GSB",
+        text: "A PHP website for managing medical representative paiements, made in school for my BTS",
+        img: "gsb.png"
+    },
+    cgb: {
+        title: "CGB",
+        text: "A REST Banking API built with springboot made for my BTS",
+        img: "cgb.png"
+    },
 };
 
 const detailBox = document.getElementById('detailBox');
