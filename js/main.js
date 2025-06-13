@@ -5,7 +5,7 @@ import { animate } from './three/animate.js';
 import './three/water.js';
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
-import './ui/scrollLogic.js';
+//import './ui/scrollLogic.js';
 import './ui/carousel.js';
 import './ui/projectsUnfold';
 

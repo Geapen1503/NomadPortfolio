@@ -577,6 +577,8 @@ div.projectBottomBox {
     display: flex;
     width: 100%;
     height: 65%;
+    position: relative;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -588,6 +590,7 @@ div.projectBottomBox {
     display: flex;
     width: 80%;
     height: 100%;
+    z-index: 1;
     align-items: center;
     flex-direction: column;
 
@@ -614,27 +617,20 @@ p.myProjectsDefaultText{
     text-align: justify;
 }
 
-
-.projectBottomBox {
-    position: relative;
-    overflow: hidden;
-}
-
-.myProjectsDefaultBox {
-    z-index: 1;
-}
-
 .projectDetailBox {
-    position: absolute;
-    top: 0; left: 0;
+    display: flex;
     width: 100%;
     height: 0;
-    background-color: var(--alku-light-blue);
-    overflow: hidden;
-    transition: height 0.5s ease;
+    top: 0; left: 0;
     z-index: 2;
     padding: 0 3vw;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     box-sizing: border-box;
+    transition: height 0.5s ease;
+    background-color: var(--alku-light-blue);
 }
 
 .projectBottomBox.open .projectDetailBox {
