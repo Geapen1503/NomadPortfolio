@@ -13,7 +13,7 @@ html {
 :root { /* Mainbox size and margin top for 3D window */
     --mainbox-height: 500vw;
     --mainbox-3D-height-margin: -200vw;
-    --mainbox-phone-height: 900vw;
+    --mainbox-phone-height: 2500vw;
     --mainbox-phone-3D-height-margin: -400vw;
     --external-darker-orange: #BD5013;
     --alku-light-orange: #EC8C00;
@@ -823,7 +823,7 @@ p.myProjectsDefaultText{
 
 
     #InternalMainBox {
-        height: 400vw;
+        height: 800vw;
         margin-top: -15vw;
     }
 
@@ -908,5 +908,160 @@ p.myProjectsDefaultText{
 
     /* Who Am I Box Ending */
 
+    /* ProjectBox Beginning */
+
+    div.projectBox {
+        height: 330vw;
+    }
+
+    div.internalProjectBox {
+        width: 100%;
+        height: 310vw;
+        margin-top: 12%;
+    }
+
+    div.projectTopBox {
+        width: 100%;
+        height: 28%;
+    }
+
+    .projectCarousel {
+        display: flex;
+        gap: 10vw;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        align-items: center;
+        padding: 11vw;
+        scrollbar-width: none; /* firefox */
+    }
+
+    .carouselArrow {
+        font-size: 20vw;
+    }
+
+    .carouselArrow.left {
+        left: 2vw;
+    }
+    .carouselArrow.right {
+        right: 2vw;
+    }
+
+    div.projectCard {
+        height: 65vw;
+        min-width: 53vw;
+        max-width: 53vw;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    div.projectCard:nth-child(1) {
+        margin-left: 15%;
+    }
+
+    img.projectCardLogo {
+        width: 37vw;
+        height: 37vw;
+        margin-top: 3vw;
+    }
+
+    div.projectInfo {
+        width: 100%;
+        height: 20vw;
+    }
+
+    .projectInfo h3 {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 3.6vw;
+        margin-left: 0.2vw;
+        margin-right: 0.2vw;
+        color: white;
+    }
+
+    .projectInfo p {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+        font-size: 2.7vw;
+        margin-top: -0.6vw;
+        margin-left: 0.2vw;
+        margin-right: 0.2vw;
+        color: white;
+    }
+
+
+    div.projectBottomBox {
+        height: 72%;
+    }
+
+    .myProjectsDefaultBox {
+        width: 80%;
+    }
+
+    h2.myProjectsDefaultTitle {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 10vw;
+        margin-top: 4vw;
+        text-align: center;
+
+        color: var(--alku-based-orange);
+    }
+
+    p.myProjectsDefaultText{
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+        font-size: 3vw;
+        margin-top: -1vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        color: white;
+        text-align: justify;
+    }
+
+
+    .projectDetailBox .detail-title {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 10vw;
+        text-align: center;
+        color: var(--alku-based-orange);
+        margin-top: 4vw;
+    }
+
+    .projectDetailBox .detail-text {
+        font-family: "Orbitron", sans-serif;
+        font-size: 3vw;
+        font-weight: 500;
+        line-height: 1.4;
+        color: white;
+        text-align: justify;
+        margin-top: 6vw;
+        margin-left: 8vw;
+        margin-right: 8vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .projectDetailBox .detail-image {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto 2vw;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .projectDetailBox .detail-close {
+        position: absolute;
+        bottom: 3.5vw;
+        left: 50%;
+        transform: translateX(-50%) rotate(-90deg);
+        font-size: 13.5vw;
+        cursor: pointer;
+        color: white;
+        padding: 0.5vw 1vw;
+        border-radius: 2vw;
+        line-height: 1;
+    }
+
+    /* ProjectBox Ending */
 
 }
