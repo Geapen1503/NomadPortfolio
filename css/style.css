@@ -364,14 +364,16 @@ div.bottomIntroBox {
     justify-content: center;
     align-items: center;
 
-    background-color: whitesmoke;
+    background:
+            whitesmoke
+            url('/src/img/transparentTextures/handmade-paper.png');
 }
 
 .whoAmIInternalBox {
     display: flex;
     width: 60%;
     height: 60%;
-    margin-top: 3vw;
+    margin-top: -1vw;
     flex-direction: column;
 }
 
@@ -677,6 +679,155 @@ p.myProjectsDefaultText{
 
 /* ProjectBox Ending */
 
+/* beginning DegreeBox */
+
+div.degreeBox {
+    display: flex;
+    width: 100%;
+    height: 70vw;
+    justify-content: center;
+    align-items: center;
+
+/*    background: linear-gradient(to top, var(--alku-based-orange) 10%, var(--alku-light-blue) 90%);*/
+    /* #00C2A8 */
+
+    background-color: mediumaquamarine;
+    background-image: url("/src/img/transparentTextures/black-scales.png");
+}
+
+div.internalDegreeBox {
+    display: flex;
+    width: 56%;
+    height: 52%;
+    flex-direction: column;
+
+}
+
+div.topDegreeInBox {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+div.bottomDegreeInBox {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+div.degreeItemBox {
+    display: flex;
+    width: 26vw;
+    height: 16vw;
+    position: relative;
+    flex-direction: row;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    /*transition: transform 0.1s ease-out, box-shadow 0.3s ease;*/
+    cursor: pointer;
+}
+
+/*div.degreeItemBox:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}*/
+
+div.degreeItemBox:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+div.degreeItemLeftBox {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    z-index: 4;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--alku-based-orange);
+}
+
+div.degreeItemLeftBox1 {
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+}
+div.degreeItemLeftBox2 {
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+img.degreeIcon {
+    width: 5vw;
+    height: 5vw;
+    margin-top: 2.8vw;
+}
+
+p.degreeYearText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 2vw;
+    margin-top: -0.2vw;
+    color: whitesmoke;
+    text-align: center;
+}
+
+div.degreeItemRightBox {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+
+}
+
+div.degreeItemRightBox1 {
+    margin-left: 36%;
+}
+div.degreeItemRightBox2 {
+    margin-right: 36%;
+}
+
+p.degreeTitleText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 1.5vw;
+    margin-top: 3.5vw;
+    color: whitesmoke;
+}
+
+p.placeText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+    margin-top: -1vw;
+    color: whitesmoke;
+}
+
+p.placeTextMention {
+    margin-top: -0.5vw;
+}
+
+p.mentionText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+    margin-top: -1vw;
+    color: var(--alku-based-orange);
+    text-align: justify;
+}
+
+/* Ending DegreeBox */
+
 @media (max-width: 768px) {
     .loaderText {
         font-size: 4vw;
@@ -864,14 +1015,14 @@ p.myProjectsDefaultText{
         justify-content: center;
     }
     div.wAiProfilePicBackground {
-        width: 78vw;
-        height: 45vw;
+        width: 85vw;
+        height: 52vw;
         margin-top: 0.1vw;
         margin-left: -3.5vw;
     }
     img.wAITheoProfilePic {
-        width: 78vw;
-        height: 45vw;
+        width: 85vw;
+        height: 52vw;
         margin-top: 3.5vw;
         margin-left: 4vw;
     }
