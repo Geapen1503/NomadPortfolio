@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbarBox");
     const burger = document.querySelector(".burgerMenu");
     const buttonBox = document.querySelector(".buttonBox");
-    const projectBox = document.querySelector(".projectBox");
+    const degreeBox = document.querySelector(".degreeBox");
 
     function isOverOrange(element) {
         const elemRect = element.getBoundingClientRect();
-        const projectRect = projectBox.getBoundingClientRect();
+        const projectRect = degreeBox.getBoundingClientRect();
 
         return (
             elemRect.bottom > projectRect.top &&
