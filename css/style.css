@@ -738,6 +738,27 @@ div.degreeItemBox {
     cursor: pointer;
 }
 
+div.degreeItemUpcomingBox {
+    background-image: repeating-linear-gradient(
+            45deg,
+            rgba(200, 200, 200, 0.4) 0px,
+            rgba(200, 200, 200, 0.4) 10px,
+            transparent 10px,
+            transparent 20px
+    );
+    background-size: 300% 300%;
+    animation: stripesAnim 3.2s linear infinite;
+}
+
+@keyframes stripesAnim {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 /*div.degreeItemBox:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }*/
@@ -1215,4 +1236,155 @@ p.mentionText {
 
     /* ProjectBox Ending */
 
+    /* beginning DegreeBox */
+
+    div.degreeBox {
+        width: 100%;
+        height: 240vw;
+    }
+
+    div.internalDegreeBox {
+        width: 97%;
+        height: 60%;
+
+    }
+
+    div.topDegreeInBox {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    div.bottomDegreeInBox {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    div.degreeItemBox {
+        display: flex;
+        width: 44vw;
+        height: 56vw;
+        flex-direction: column;
+    }
+
+    div.degreeItemBox:nth-child(1) {
+        margin-top: -30vw;
+    }
+
+    div.degreeItemBox:nth-child(2) {
+        margin-top: 35vw;
+    }
+
+    div.degreeItemUpcomingBox {
+        background-image: repeating-linear-gradient(
+                45deg,
+                rgba(200, 200, 200, 0.4) 0px,
+                rgba(200, 200, 200, 0.4) 10px,
+                transparent 10px,
+                transparent 20px
+        );
+        background-size: 300% 300%;
+        animation: stripesAnim 3.2s linear infinite;
+    }
+
+    @keyframes stripesAnim {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100% 100%;
+        }
+    }
+
+    div.degreeItemBox:nth-child(2) {
+        flex-direction: column;
+    }
+
+    div.degreeItemLeftBox {
+        display: flex;
+        width: 100%;
+        height: 33%;
+        z-index: 4;
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-around;
+
+        background-color: var(--alku-based-orange);
+    }
+
+    div.degreeItemLeftBox1 {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+    div.degreeItemLeftBox2 {
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+    }
+
+    img.degreeIcon {
+        width: 10vw;
+        height: 10vw;
+        margin-top: 0;
+    }
+
+    p.degreeYearText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 5vw;
+        margin-top: 5vw;
+    }
+
+    div.degreeItemRightBox {
+        width: 100%;
+        height: 67%;
+        margin-top: 43%;
+    }
+
+    div.degreeItemRightBox1 { margin-left: 0; }
+    div.degreeItemRightBox2 { margin-right: 0; }
+
+    p.degreeTitleText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        font-size: 4vw;
+        margin-top: 1.5vw;
+        margin-left: 2vw;
+        color: whitesmoke;
+    }
+
+    p.placeText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 3vw;
+        margin-top: -3vw;
+        margin-left: 2vw;
+        color: whitesmoke;
+    }
+
+    p.placeTextMention {
+        margin-top: -2vw;
+    }
+
+    p.mentionText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 3vw;
+        margin-top: -3vw;
+        margin-left: 2vw;
+        color: var(--alku-based-orange);
+        text-align: justify;
+    }
+
+    /* Ending DegreeBox */
 }
