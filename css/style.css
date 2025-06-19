@@ -776,7 +776,7 @@ div.degreeItemLeftBox {
     flex-direction: column;
     align-items: center;
 
-    background-color: var(--alku-based-orange);
+    background-color: rgba(203, 128, 17, 0.5);
 }
 
 div.degreeItemLeftBox1 {
@@ -1318,7 +1318,7 @@ p.mentionText {
         flex-direction: row;
         justify-content: space-around;
 
-        background-color: var(--alku-based-orange);
+        background-color: rgba(203, 128, 17, 0.5);
     }
 
     div.degreeItemLeftBox1 {
