@@ -7,8 +7,8 @@ import './ui/navbar.js';
 import './ui/burgerMenu.js';
 //import './ui/scrollLogic.js';
 import './ui/carousel.js';
-import './ui/projectsUnfold';
-import './ui/degreeCards';
+import './ui/projectsUnfold.js';
+import './ui/degreeCards.js';
 
 initModels().then(() => {
     loadElephant();
