@@ -9,7 +9,7 @@ import './ui/burgerMenu.js';
 import './ui/carousel.js';
 import './ui/projectsUnfold.js';
 import './ui/degreeCards.js';
-import './ui/workCarrousel.js';
+
 
 initModels().then(() => {
     loadElephant();
