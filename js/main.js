@@ -6,9 +6,10 @@ import './three/water.js';
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
 //import './ui/scrollLogic.js';
-import './ui/carousel.js';
+import './ui/projectCarousel.js';
 import './ui/projectsUnfold.js';
 import './ui/degreeCards.js';
+import './ui/workCarrousel.js';
 
 
 initModels().then(() => {
