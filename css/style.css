@@ -938,8 +938,18 @@ div.workCard {
 .workCard:nth-child(1) {
     margin-left: 16vw;
 }
-.workCard:nth-child(8) {
+.latestWorkCard {
     margin-right: 16vw;
+}
+
+p.latestWorkCardTitle {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 2vw;
+    margin-top: 2.5vw;
+    text-align: center;
+
+    color: var(--deep-brown);
 }
 
 div.workCard:hover {
@@ -974,6 +984,21 @@ img.workCardLogo {
 img.workCardOrtrosLogo {
     width: 12vw;
     height: 7vw;
+}
+
+img.workCardITSystemsLogo {
+    width: 10vw;
+    height: 10vw;
+}
+
+img.workCardTraxensLogo {
+    width: 10vw;
+    height: 11vw;
+}
+
+img.workCardAlcineoLogo {
+    width: 10vw;
+    height: 9vw;
 }
 
 div.workCardTitleBox {
@@ -1027,7 +1052,11 @@ div.workBottomTextBox {
     display: flex;
     height: 80%;
     width: 100%;
+}
 
+div.workBottomLastTextBox {
+    display: flex;
+    flex-direction: column;
 }
 
 p.workBottomText {
@@ -1038,6 +1067,18 @@ p.workBottomText {
     margin-top: 1.3vw;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
+
+    color: var(--mid-coal);
+}
+
+p.lastWorkBottomText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 0.95vw;
+    text-align: center;
+    margin-top: 1.8vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
 
     color: var(--mid-coal);
 }
@@ -1071,7 +1112,6 @@ img.workCardLinkImg:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
-
 
 /* Ending WorkBox */
 
@@ -1221,7 +1261,7 @@ img.workCardLinkImg:hover {
 
 
     #InternalMainBox {
-        height: 800vw;
+        height: 1500vw;
         margin-top: -15vw;
     }
 
@@ -1613,4 +1653,134 @@ img.workCardLinkImg:hover {
     }
 
     /* Ending DegreeBox */
+
+    /* beginning WorkBox */
+
+    div.workBox {
+        width: 100%;
+        height: 240vw;
+    }
+
+    .internalWorkBox {
+        width: 95%;
+        height: 150vw;
+    }
+
+    .workCarrousel {
+        gap: 35vw;
+        padding: 25vw;
+    }
+
+    .carouselWorkArrow {
+        font-size: 25vw;
+        color: var(--light-terracota);
+    }
+
+    div.workCard {
+        height: 100vw;
+        min-width: 78vw;
+        max-width: 78vw;
+    }
+
+    .workCard:nth-child(1) {
+        margin-left: -16.5vw;
+    }
+    .latestWorkCard {
+        margin-right: -16.5vw;
+    }
+
+    p.latestWorkCardTitle {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        font-size: 6vw;
+        margin-top: 6.5vw;
+        text-align: center;
+
+        color: var(--deep-brown);
+    }
+
+    img.workCardLogo {
+        width: 14vw;
+        height: 14vw;
+    }
+
+    img.workCardOrtrosLogo {
+        width: 35vw;
+        height: 20vw;
+    }
+
+    img.workCardITSystemsLogo {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    img.workCardTraxensLogo {
+        width: 30vw;
+        height: 33vw;
+    }
+
+    p.companyTitle {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        font-size: 6.7vw;
+        margin-top: 9vw;
+
+        color: var(--deep-brown);
+    }
+
+    p.jobPositionText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 4vw;
+        margin-top: -6.5vw;
+
+        color: var(--ivory-white);
+    }
+
+    p.jobDateText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 4vw;
+        margin-top: -4vw;
+
+        color: var(--deep-brown);
+    }
+
+    p.workBottomText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 2.8vw;
+        text-align: justify;
+        margin-top: 3vw;
+        margin-left: 4vw;
+        margin-right: 4vw;
+
+        color: var(--mid-coal);
+    }
+
+    p.lastWorkBottomText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 2.8vw;
+        text-align: center;
+        margin-top: 1.8vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+
+        color: var(--mid-coal);
+    }
+
+    span.highlightedWorkText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 2.8vw;
+        color: var(--deep-salmon);
+    }
+
+    img.workCardLinkImg {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    /* Ending WorkBox */
 }
