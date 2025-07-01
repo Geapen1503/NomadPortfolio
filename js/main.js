@@ -3,6 +3,7 @@ import { initModels, loadElephant } from './three/models.js';
 import { updateSun } from './three/sky.js';
 import { animate } from './three/animate.js';
 import './three/water.js';
+import './three/globe.js';
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
 //import './ui/scrollLogic.js';
