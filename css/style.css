@@ -1120,7 +1120,7 @@ img.workCardLinkImg:hover {
 .travelBox {
     display: flex;
     width: 100%;
-    height: 70vw;
+    height: 80vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1130,15 +1130,112 @@ img.workCardLinkImg:hover {
 
 .internalTravelBox {
     display: flex;
-    width: 70%;
+    width: 100%;
     height: 50vw;
+    margin-top: -10vw;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 div#globeWindow {
+    display: flex;
     width: 100%;
     height: 100%;
-    margin-left: -15vw;
+    z-index: 1;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#globeWindow:hover {
+    cursor: grab;
+}
+
+#globeWindow:active {
+    cursor: grabbing;
+}
+
+p.travelBoxTitle {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 4vw;
+    margin-top: -4vw;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    text-align: center;
+    color: var(--mid-coal);
+}
+
+.dots {
+    display: inline-block;
+}
+
+.dot {
+    opacity: 0;
+    animation: dotStep 1.5s infinite;
+}
+
+.dot:nth-child(1) {
+    animation: dot1 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+    animation: dot2 1.5s infinite;
+}
+
+.dot:nth-child(3) {
+    animation: dot3 1.5s infinite;
+}
+
+@keyframes dot1 {
+    0%, 25% { opacity: 1; }
+    25.01%, 49.99% { opacity: 1; }
+    50%, 74.99% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+}
+
+@keyframes dot2 {
+    0%, 24.99% { opacity: 0; }
+    25%, 49.99% { opacity: 1; }
+    50%, 74.99% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+}
+
+@keyframes dot3 {
+    0%, 49.99% { opacity: 0; }
+    50%, 74.99% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+}
+
+div.flagBandBox {
+    display: flex;
+    width: 100%;
+    height: 5vw;
+    margin-top: -19vw;
+    z-index: 0;
+    position: absolute;
+    overflow: hidden;
+    align-items: center;
+
+    background-color: antiquewhite;
+}
+
+.flag-scroll {
+    display: flex;
+    align-items: center;
+    animation: scroll 30s linear infinite;
+    white-space: nowrap;
+    font-size: 4vw;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* Ending TravelBox */
@@ -1811,4 +1908,36 @@ div#globeWindow {
     }
 
     /* Ending WorkBox */
+
+    /* Beginning TravelBox */
+
+    .travelBox {
+        width: 100%;
+        height: 280vw;
+    }
+
+    .internalTravelBox {
+        display: flex;
+        width: 100%;
+        height: 190vw;
+        margin-top: -40vw;
+    }
+
+    div#globeWindow {
+        width: 100%;
+        height: 100%;
+    }
+
+    p.travelBoxTitle {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 12vw;
+        margin-top: -10vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        text-align: center;
+        color: var(--mid-coal);
+    }
+
+    /* Ending TravelBox */
 }
