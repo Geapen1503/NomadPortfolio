@@ -13,7 +13,7 @@ html {
 :root { /* Mainbox size and margin top for 3D window */
     --mainbox-height: 444vw;
     --mainbox-3D-height-margin: -200vw;
-    --mainbox-phone-height: 2500vw;
+    --mainbox-phone-height: 1666vw;
     --mainbox-phone-3D-height-margin: -400vw;
     --external-darker-orange: #BD5013;
     --alku-light-orange: #EC8C00;
@@ -1242,7 +1242,7 @@ div.flagBandBox {
 
 /* Ending TravelBox */
 
-/* Beginning Endbox */
+/* Beginning Footer */
 
 footer {
     display: flex;
@@ -1345,7 +1345,7 @@ div.arrowUpBox:hover {
     height: 5vw;
 }
 
-/* Ending Endbox */
+/* Ending Footer */
 
 @media (max-width: 768px) {
     .loaderText {
@@ -1493,7 +1493,7 @@ div.arrowUpBox:hover {
 
 
     #InternalMainBox {
-        height: 1500vw;
+        height: 1465vw;
         margin-top: -15vw;
     }
 
@@ -2047,4 +2047,63 @@ div.arrowUpBox:hover {
     }
 
     /* Ending TravelBox */
+
+    /* Beginning Footer */
+
+    footer {
+        width: 100%;
+        height: 100vw;
+    }
+
+    .footerSloganText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 600;
+        font-size: 5vw;
+        margin-top: 7vw;
+        text-align: center;
+        color: var(--ivory-white);
+    }
+
+    .footerNetworkBox {
+        width: 65%;
+        height: 25%;
+    }
+
+    a.footerNetworkLink {
+        margin-top: 18vw;
+    }
+
+    img.footerNetworkLogo {
+        width: 10.5vw;
+        height: 10.5vw;
+    }
+
+    img.footerNetworkMailLogo {
+        width: 13.5vw;
+        height: 13.5vw;
+    }
+
+    p.footerCopyText {
+        font-family: "Orbitron", sans-serif;
+        font-weight: lighter;
+        font-size: 3.6vw;
+        margin-top: 10vw;
+        text-align: center;
+        color: var(--ivory-white);
+    }
+
+    div.arrowUpBox {
+        width: 18vw;
+        height: 18vw;
+        border-radius: 50%;
+
+        background-color: var(--ivory-white);
+    }
+
+    .arrowUpImg {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    /* Ending Footer */
 }
