@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { scene, camera } from './scene.js';
+import bridgeModelUrl from '/src/model/bridge_model.glb?url';
+import elephantModelUrl from '/src/model/elephant_transition.glb?url';
 
 const loader = new GLTFLoader();
 const models = [];
@@ -12,7 +14,7 @@ let isAccelerating = false;
 function createModel(xPosition) {
     return new Promise((resolve, reject) => {
         loader.load(
-            './src/model/bridge_model.glb',
+            bridgeModelUrl,
             (gltf) => {
                 const model = gltf.scene;
                 model.position.set(xPosition, camera.position.y - 0.25, camera.position.z - 0.3);
@@ -46,7 +48,7 @@ function playExclusive(action) {
 }
 
 function loadElephant() {
-    loader.load('./src/model/elephant_transition.glb', (gltf) => {
+    loader.load(elephantModelUrl, (gltf) => {
         const elephant = gltf.scene;
         //elephant.position.set(-0.02, 1.862, 4.69);
         elephant.position.set(
