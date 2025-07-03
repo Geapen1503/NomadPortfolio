@@ -11,7 +11,7 @@ html {
 }
 
 :root { /* Mainbox size and margin top for 3D window */
-    --mainbox-height: 500vw;
+    --mainbox-height: 444vw;
     --mainbox-3D-height-margin: -200vw;
     --mainbox-phone-height: 2500vw;
     --mainbox-phone-3D-height-margin: -400vw;
@@ -289,11 +289,9 @@ div.bottomIntroBox {
 #InternalMainBox {
     display: flex;
     width: 100%;
-    height: 400vw;
+    height: 393vw;
     margin-top: -3vw;
     flex-direction: column;
-
-    background-color: brown;
 }
 
 /* navbar beginning */
@@ -1138,6 +1136,10 @@ img.workCardLinkImg:hover {
     align-items: center;
 }
 
+.scene-container {
+    width: 100%;
+}
+
 div#globeWindow {
     display: flex;
     width: 100%;
@@ -1239,6 +1241,111 @@ div.flagBandBox {
 }
 
 /* Ending TravelBox */
+
+/* Beginning Endbox */
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 30vw;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+
+
+    background-color: var(--alku-based-orange);
+}
+
+.footerSloganBox {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerSloganText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 1.4vw;
+    margin-top: 3vw;
+    text-align: center;
+    color: var(--ivory-white);
+}
+
+.footerNetworkBox {
+    display: flex;
+    width: 20%;
+    height: 25%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a.footerNetworkLink {
+    margin-top: 7vw;
+    z-index: 2;
+}
+
+img.footerNetworkLogo {
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+img.footerNetworkMailLogo {
+    width: 4.5vw;
+    height: 4.5vw;
+}
+
+img.footerNetworkLogo:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
+}
+
+.footerCopyrightBox {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+p.footerCopyText {
+    font-family: "Orbitron", sans-serif;
+    font-weight: lighter;
+    font-size: 0.95vw;
+    margin-top: 0.5vw;
+    text-align: center;
+    color: var(--ivory-white);
+}
+
+div.footerArrowUpBox {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+div.arrowUpBox {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+
+    background-color: var(--ivory-white);
+}
+
+div.arrowUpBox:hover {
+    cursor: pointer;
+    transition-duration: 300ms;
+    background-color: antiquewhite;
+}
+
+.arrowUpImg {
+    width: 5vw;
+    height: 5vw;
+}
+
+/* Ending Endbox */
 
 @media (max-width: 768px) {
     .loaderText {
