@@ -4,6 +4,7 @@ import { updateSun } from './three/sky.js';
 import { animate } from './three/animate.js';
 import './three/water.js';
 import './three/globe.js';
+import '../js/globe.gl.min.js';
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
 //import './ui/scrollLogic.js';
