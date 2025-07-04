@@ -1,11 +1,12 @@
 import * as THREE from 'three';
 import { Water } from 'three/examples/jsm/objects/Water.js';
 import { scene } from './scene.js';
+import waterNormalsUrl from '/src/textures/waternormals.jpg?url';
 
 const waterGeometry = new THREE.PlaneGeometry(10000, 10000);
 
 const waterNormals = new THREE.TextureLoader().load(
-    './src/textures/waternormals.jpg',
+    waterNormalsUrl,
     (texture) => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     }
