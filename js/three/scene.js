@@ -13,13 +13,14 @@ camera.position.set(0, 2, 5);
 const canvas = document.getElementById('threeCanvas');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: false, antialias: true });
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+const wrapper = document.getElementById('canvasWrapperBox');
+renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
 renderer.setClearColor(0x000000, 0);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.NoToneMapping;
 //renderer.outputEncoding = THREE.sRGBEncoding;
 
-let previousWidth = window.innerWidth;
+let previousWidth = wrapper.clientWidth;
 
 onWindowResize();
 
@@ -28,10 +29,10 @@ light.position.set(5, 10, 7.5);
 scene.add(light);
 
 function onWindowResize() {
-    const currentWidth = window.innerWidth;
+    const currentWidth = wrapper.clientWidth;
 
     if (currentWidth !== previousWidth) {
-        const height = window.innerHeight;
+        const height = wrapper.clientHeight;
 
         camera.aspect = currentWidth / height;
         camera.updateProjectionMatrix();
