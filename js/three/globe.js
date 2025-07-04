@@ -8,11 +8,12 @@ const world = new Globe(document.getElementById('globeWindow'), { animateIn: fal
     .globeImageUrl(earthBlueMarble)
     .bumpImageUrl(earthTopology);
 
-world.controls().autoRotate = true;
+world.controls().enableZoom = false;
 world.controls().autoRotateSpeed = 0.55;
 
 if (isMobileDevice()) world.controls().enableRotate = false;
-else world.controls().enableZoom = false;
+else world.controls().enableRotate = true;
+
 
 setTimeout(() => {
     const renderer = world.renderer?.();
@@ -30,7 +31,7 @@ const CLOUDS_ROTATION_SPEED = -0.008;
 
 new THREE.TextureLoader().load(CLOUDS_IMG_URL, cloudsTexture => {
     const clouds = new THREE.Mesh(
-        new THREE.SphereGeometry(world.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75),
+        new THREE.SphereGeometry(world.getGlobeRadius() * (1 + CLOUDS_ALT), 40, 40),
         new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true })
     );
     world.scene().add(clouds);
