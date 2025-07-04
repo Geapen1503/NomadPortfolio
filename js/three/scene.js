@@ -19,6 +19,8 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.NoToneMapping;
 //renderer.outputEncoding = THREE.sRGBEncoding;
 
+let previousWidth = window.innerWidth;
+
 onWindowResize();
 
 const light = new THREE.DirectionalLight(0xffffff, 3);
@@ -26,14 +28,19 @@ light.position.set(5, 10, 7.5);
 scene.add(light);
 
 function onWindowResize() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const currentWidth = window.innerWidth;
 
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
+    if (currentWidth !== previousWidth) {
+        const height = window.innerHeight;
 
-    renderer.setSize(width, height);
-    //renderer.setPixelRatio(window.devicePixelRatio);
+        camera.aspect = currentWidth / height;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(currentWidth, height);
+        // renderer.setPixelRatio(window.devicePixelRatio);
+
+        previousWidth = currentWidth;
+    }
 }
 
 
