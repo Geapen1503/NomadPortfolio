@@ -10,7 +10,9 @@ const world = new Globe(document.getElementById('globeWindow'), { animateIn: fal
 
 world.controls().autoRotate = true;
 world.controls().autoRotateSpeed = 0.55;
-world.controls().enableZoom = false;
+
+if (isMobileDevice()) world.controls().enableRotate = false;
+else world.controls().enableZoom = false;
 
 setTimeout(() => {
     const renderer = world.renderer?.();
@@ -38,3 +40,7 @@ new THREE.TextureLoader().load(CLOUDS_IMG_URL, cloudsTexture => {
         requestAnimationFrame(rotateClouds);
     })();
 });
+
+function isMobileDevice() {
+    return typeof window.orientation !== "undefined" || navigator.userAgent.includes('IEMobile') || window.innerWidth < 768;
+}
