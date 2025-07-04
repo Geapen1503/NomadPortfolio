@@ -38,10 +38,10 @@ function onWindowResize() {
         camera.updateProjectionMatrix();
 
         renderer.setSize(currentWidth, height);
-        // renderer.setPixelRatio(window.devicePixelRatio);
 
         previousWidth = currentWidth;
     }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 }
 
 

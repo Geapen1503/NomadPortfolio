@@ -7,7 +7,7 @@ import elephantModelUrl from '/src/model/elephant_transition.glb?url';
 const loader = new GLTFLoader();
 const models = [];
 const spacing = 0.36;
-const numberOfModels = 13;
+const numberOfModels = 6;
 let mixer;
 let isAccelerating = false;
 

@@ -19,6 +19,22 @@ initModels().then(() => {
     loadElephant();
     animate();
 
+    const canvasWrapper = document.getElementById('canvasWrapperBox');
+    let animationRunning = true;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            animationRunning = entry.isIntersecting;
+        });
+    }, {
+        root: null,
+        threshold: 0.1
+    });
+
+    if (canvasWrapper) observer.observe(canvasWrapper);
+
+    window.__elephantSceneVisible = () => animationRunning;
+
     const loader = document.getElementById('loader');
     if (loader) {
         loader.style.transition = 'opacity 0.5s ease';

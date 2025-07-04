@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { models, spacing } from './models.js';
 import { mixer, isAccelerating } from './models.js';
 import { water } from './water.js';
@@ -6,8 +7,14 @@ import { camera, scene, renderer } from './scene.js';
 let moveSpeed = 0;
 const maxMoveSpeed = 0.0038;
 
+let clock = new THREE.Clock();
+
 function animate() {
     requestAnimationFrame(animate);
+
+    if (typeof window.__elephantSceneVisible === 'function' && !window.__elephantSceneVisible()) return;
+
+    const delta = clock.getDelta();
 
     if (isAccelerating || moveSpeed > 0) {
         if (isAccelerating && moveSpeed < maxMoveSpeed) {
@@ -28,7 +35,7 @@ function animate() {
         });
     }
 
-    if (mixer) mixer.update(0.016);
+    if (mixer) mixer.update(delta);
 
     water.material.uniforms['time'].value += 1.0 / 60.0;
 
