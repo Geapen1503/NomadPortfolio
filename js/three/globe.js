@@ -1,9 +1,12 @@
 import * as THREE from 'three';
 import Globe from 'globe.gl';
+import earthBlueMarble from '/src/img/transparentTextures/earth-blue-marble.jpg';
+import earthTopology from '/src/img/transparentTextures/earth-topology.png';
+import clouds from '/src/img/transparentTextures/clouds.png';
 
 const world = new Globe(document.getElementById('globeWindow'), { animateIn: false })
-    .globeImageUrl('./src/img/transparentTextures/earth-blue-marble.jpg')
-    .bumpImageUrl('./src/img/transparentTextures/earth-topology.png');
+    .globeImageUrl(earthBlueMarble)
+    .bumpImageUrl(earthTopology);
 
 world.controls().autoRotate = true;
 world.controls().autoRotateSpeed = 0.55;
@@ -19,7 +22,7 @@ setTimeout(() => {
     }
 }, 100);
 
-const CLOUDS_IMG_URL = './src/img/transparentTextures/clouds.png';
+const CLOUDS_IMG_URL = clouds;
 const CLOUDS_ALT = 0.004;
 const CLOUDS_ROTATION_SPEED = -0.008;
 
