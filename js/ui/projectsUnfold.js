@@ -1,27 +1,94 @@
 const projectData = {
     jarod57: {
         title: "Jarod'57",
-        text: "Sandbox 3D Game développé en C# avec Unity. Premier projet 3D pour expérimenter mécaniques de gameplay, IA basique, etc.",
+        text: "Jarod'57 was the first <span class=\"highlightedWAIText\">3D game</span> I built using " +
+            "<span class=\"highlightedWAIText\">Unity</span>.<br><br>" +
+            "It’s a <span class=\"highlightedWAIText\">third-person open-world adventure</span> set on a mysterious island " +
+            "— think a mix between <span class=\"highlightedWAIText\">tropical</span> " +
+            "and <span class=\"highlightedWAIText\">desert</span> vibes, somewhere between Mexico and nowhere." +
+            "<br><br>The game was never officially released — it was a super <span class=\"highlightedWAIText\">ambitious</span> " +
+            "project, especially for a first. But I learned a ton from it, and it really " +
+            "helped me get comfortable with Unity.<br><br>Jarod'57 " +
+            "became my personal <span class=\"highlightedWAIText\">sandbox</span> for <span class=\"highlightedWAIText\">experimenting</span> " +
+            "with all kinds of features: From <span class=\"highlightedWAIText\">vehicle systems</span> (cars, bikes) " +
+            "to custom <span class=\"highlightedWAIText\">NPCs</span> with <span class=\"highlightedWAIText\">pathfinding</span> and " +
+            "interactive roles — healers, mechanics, shopkeepers... I built a <span class=\"highlightedWAIText\">big island</span> named " +
+            "\"<span class=\"highlightedWAIText\">Cala</span>\" with a full <span class=\"highlightedWAIText\">city</span>, " +
+            "oil pipelines, boats, palm trees, pine forests with wind, grass, ocean, outposts, " +
+            "buildings, lighthouses, birds, crabs, multiple weapons — the list goes on and on and on.<br><br>The project " +
+            "had a <span class=\"highlightedWAIText\">unique atmosphere</span> and I loved working on it. " +
+            "But after almost two years, I realized it " +
+            "had grown a bit too big.<br><br>Some early systems were holding the game back, and refactoring " +
+            "everything would’ve taken forever. So I made the <span class=\"highlightedWAIText\">tough call</span> " +
+            "to pause it — and started a smaller, more focused game instead: <span class=\"highlightedWAIText\">TavernMan</span>." +
+            "<br><br>I ended up reusing a lot of what I built in " +
+            "<span class=\"highlightedWAIText\">Jarod'57</span>, and the new game — set " +
+            "on a smaller <span class=\"highlightedWAIText\">island</span> — is way more doable.",
         img: "jarod57-detail.jpg"
     },
     tavernman: {
         title: "TavernMan",
-        text: "Simulation 3D d’une taverne, gestion des ressources, IA des PNJ, économie interne. En cours de développement.",
+        text: "TavernMan is a <span class=\"highlightedWAIText\">first-person 3D game</span> " +
+            "made with <span class=\"highlightedWAIText\">Unity</span>.<br><br>" +
+            "I started working on it right after putting <span class=\"highlightedWAIText\">Jarod'57</span> " +
+            "on hold — the goal was clear: build something smaller, more <span class=\"highlightedWAIText\">focused</span>, " +
+            "and most importantly, something I could actually <span class=\"highlightedWAIText\">finish</span>.<br><br>" +
+            "The game takes place entirely at " +
+            "<span class=\"highlightedWAIText\">night</span>, on a small <span class=\"highlightedWAIText\">tropical island</span>. " +
+            "Most of the action happens inside a strange <span class=\"highlightedWAIText\">bar</span> — " +
+            "part <span class=\"highlightedWAIText\">saloon</span>, part <span class=\"highlightedWAIText\">tiki tavern</span> — " +
+            "where you’ve just been hired as the new bartender. " +
+            "As the <span class=\"highlightedWAIText\">TavernMan</span>, your job is to run the place: Serve drinks, clean up, " +
+            "manage the band, and deal with whatever problems (or weird customers) " +
+            "show up throughout the night. You’ll meet <span class=\"highlightedWAIText\">unique characters</span> and slowly uncover " +
+            "the strange secrets hidden on the <span class=\"highlightedWAIText\">island</span>.<br><br>" +
+            "On a more serious note, <span class=\"highlightedWAIText\">TavernMan</span> is a " +
+            "project where I’m combining everything I learned while building <span class=\"highlightedWAIText\">Jarod'57</span> — " +
+            "from <span class=\"highlightedWAIText\">Unity mechanics</span> to <span class=\"highlightedWAIText\">game design</span> " +
+            "and world-building. <br><br>My goal is to finish and <span class=\"highlightedWAIText\">release</span> " +
+            "this game, and finally achieve a long-time dream: publishing a full " +
+            "<span class=\"highlightedWAIText\">indie title</span> of my own.",
         img: "tavernman-detail.png"
     },
     blogai: {
         title: "BlogAI",
-        text: "API Node.js génère automatiquement des articles de blog via GPT, avec un plugin WordPress pour intégration directe."
+        text: "BlogAI is a <span class=\"highlightedWAIText\">Node.js REST API</span> I developed during my internship " +
+            "at <span class=\"highlightedWAIText\">Ortros</span>.<br><br> At the time, the team was facing a recurring " +
+            "SEO issue — many client websites lacked fresh content, which negatively impacted their search rankings. " +
+            "The idea was to <span class=\"highlightedWAIText\">automate</span> blog content creation and publication.<br><br>" +
+            "I first built a custom <span class=\"highlightedWAIText\">WordPress plugin</span>, where clients could write " +
+            "a short introduction about their business, set a publishing schedule (powered by a " +
+            "<span class=\"highlightedWAIText\">cron job</span>), and tweak a few options — like whether to include images " +
+            "in the posts.<br><br>" +
+            "Then I developed <span class=\"highlightedWAIText\">BlogAI</span>, the <span class=\"highlightedWAIText\">Node.js API</span> " +
+            "behind the scenes. It receives the data from the <span class=\"highlightedWAIText\">plugin</span>, formats " +
+            "a request to the <span class=\"highlightedWAIText\">OpenAI API</span> with dynamic parameters, and uses a prompt " +
+            "+ title-generation system to create hundreds of unique articles — all based on that initial intro text." +
+            "There’s a lot more going on under the hood, but to keep it short: this project was a deep dive into " +
+            "<span class=\"highlightedWAIText\">automation</span>, API design, and <span class=\"highlightedWAIText\">prompt engineering</span>.<br><br>" +
+            "It’s definitely one of the most rewarding things I’ve worked on, and I learned a lot from it.<br><br>" +
+            "If you’re curious, you can check it out on my <span class=\"highlightedWAIText\">GitHub</span>!"
     },
     "los-tortillas-hermanos": {
         title: "Los-Tortillas-Hermanos",
-        text: "Site e-commerce en PHP MVC, panier, gestion utilisateurs, paiement PayPal sandbox.",
+        text: "Los Tortillas Hermanos was one of the very first websites I built from scratch — back when I was still in " +
+            "high school.<br><br>It started as a way to learn <span class=\"highlightedWAIText\">HTML</span> " +
+            "and <span class=\"highlightedWAIText\">CSS</span>, back then, I was a huge Breaking Bad fan, " +
+            "I thought it’d be fun to create a fictional restaurant website inspired by the show. " +
+            "Once the first version was done, I got curious to explore further. So I rebuilt the whole thing from the " +
+            "ground up, this time using a custom <span class=\"highlightedWAIText\">PHP MVC architecture</span>." +
+            "<br><br>I set up the structure, then built a small <span class=\"highlightedWAIText\">e-commerce</span> feature " +
+            "where you could add… tortillas to your cart (naturally).<br><br>This project means a lot to me — " +
+            "it was my first real dive into coding, and it has a vibe that I still enjoy. " +
+            "Open the site, and you'll feel like you're right in <span class=\"highlightedWAIText\">Albuquerque</span>, " +
+            "New Mexico. It also taught me the basics of PHP, <span class=\"highlightedWAIText\">databases</span>, " +
+            "and <span class=\"highlightedWAIText\">backend</span> logic — and looking back, it definitely helped " +
+            "spark my decision to pursue computer science more seriously.",
         img: "los-tortillas-detail.jpg"
     },
     alkubot: {
         title: "Alkubot",
-        text: "Bot Discord en Python utilisant discord.py, commandes modération, musique et mini-jeux.",
-        img: "alkubot-detail.png"
+        text: "Bot Discord en Python utilisant discord.py, commandes modération, musique et mini-jeux."
     },
     oldPortfolio: {
         title: "Old Space Portfolio",
@@ -35,8 +102,7 @@ const projectData = {
     },
     cgb: {
         title: "CGB",
-        text: "A REST Banking API built with springboot made for my BTS",
-        img: "cgb.png"
+        text: "A REST Banking API built with springboot made for my BTS"
     },
 };
 

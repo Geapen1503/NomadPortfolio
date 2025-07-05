@@ -12,7 +12,6 @@ import './ui/projectCarousel.js';
 import './ui/projectsUnfold.js';
 import './ui/degreeCards.js';
 import './ui/workCarrousel.js';
-import './ui/arrowUp.js';
 
 
 initModels().then(() => {

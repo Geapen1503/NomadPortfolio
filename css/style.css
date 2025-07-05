@@ -29,6 +29,7 @@ html {
     --hot-browny-grey: #8C8375;
     --deep-salmon: #D6724A;
     --mid-coal: #3C3C3C;
+    --elephant-orange: #B78F30;
 }
 
 body {
@@ -653,8 +654,11 @@ p.myProjectsDefaultText{
 
 .projectDetailBox .detail-text {
     font-family: "Orbitron", sans-serif;
-    font-size: 1vw;
+    font-size: 0.95vw;
+    font-weight: 500;
     line-height: 1.4;
+    margin-left: 10vw;
+    margin-right: 10vw;
     color: white;
     text-align: justify;
     margin-bottom: 1.5vw;
@@ -1326,7 +1330,7 @@ div.footerArrowUpBox {
     align-items: center;
 }
 
-div.arrowUpBox {
+a.arrowUpButton {
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
@@ -1334,7 +1338,7 @@ div.arrowUpBox {
     background-color: var(--ivory-white);
 }
 
-div.arrowUpBox:hover {
+a.arrowUpButton:hover {
     cursor: pointer;
     transition-duration: 300ms;
     background-color: antiquewhite;
@@ -2092,7 +2096,7 @@ div.arrowUpBox:hover {
         color: var(--ivory-white);
     }
 
-    div.arrowUpBox {
+    a.arrowUpButton {
         width: 18vw;
         height: 18vw;
         border-radius: 50%;
