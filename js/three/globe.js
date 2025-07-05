@@ -9,6 +9,7 @@ const world = new Globe(document.getElementById('globeWindow'), { animateIn: fal
     .bumpImageUrl(earthTopology);
 
 world.controls().enableZoom = false;
+world.controls().autoRotate = true;
 world.controls().autoRotateSpeed = 0.55;
 
 if (isMobileDevice()) world.controls().enableRotate = false;
