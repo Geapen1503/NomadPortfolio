@@ -1169,6 +1169,7 @@ p.travelBoxTitle {
     margin-top: -4vw;
     margin-left: 25vw;
     margin-right: 25vw;
+    z-index: 3;
     text-align: center;
     color: var(--mid-coal);
 }

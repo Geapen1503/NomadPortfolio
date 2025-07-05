@@ -24,6 +24,12 @@ setTimeout(() => {
     if (globeCanvas) {
         globeCanvas.style.backgroundColor = 'transparent';
     }
+    const globeWindow = document.getElementById('globeWindow');
+    [...globeWindow.children].forEach(el => {
+        el.style.maxWidth = '100%';
+        el.style.overflow = 'hidden';
+    });
+
 }, 100);
 
 const CLOUDS_IMG_URL = clouds;
