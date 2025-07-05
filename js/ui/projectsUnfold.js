@@ -97,12 +97,50 @@ const projectData = {
     },
     gsb: {
         title: "GSB",
-        text: "A PHP website for managing medical representative paiements, made in school for my BTS",
+        text: "GSB stands for <span class=\"highlightedWAIText\">Galaxy Swiss Bourdin</span> " +
+            "— it’s a <span class=\"highlightedWAIText\">PHP-based web app</span> designed to manage and " +
+            "track payments made to medical representatives.<br><br>The app follows an " +
+            "<span class=\"highlightedWAIText\">MVC</span> architecture " +
+            "and was developed during my second year of the <span class=\"highlightedWAIText\">BTS SIO SLAM</span> " +
+            "program, as a team project. We were given an existing codebase where the " +
+            "<span class=\"highlightedWAIText\">medical rep</span> side of the app was already functional " +
+            "— they could log in and declare their payments.<br><br>Our mission was to build " +
+            "the <span class=\"highlightedWAIText\">accountant</span> " +
+            "interface: a new section where accountants could review, validate (or reject) those payment " +
+            "declarations, and generate official PDF receipts.<br><br>This project was a great " +
+            "opportunity to work on an <span class=\"highlightedWAIText\">existing codebase</span> " +
+            "— which meant adapting to someone else’s " +
+            "architecture and being careful not to break what was already there. " +
+            "It also helped me solidify my skills in <span class=\"highlightedWAIText\">PHP</span> " +
+            "and <span class=\"highlightedWAIText\">MySQL</span>, and gave me hands-on experience " +
+            "with structured backend logic and real-world business flows.",
         img: "gsb.png"
     },
     cgb: {
         title: "CGB",
-        text: "A REST Banking API built with springboot made for my BTS"
+        text: "CGB is a <span class=\"highlightedWAIText\">RESTful banking API</span> built with " +
+            "<span class=\"highlightedWAIText\">Spring Boot</span>, developed during my second year of BTS SIO SLAM. " +
+            "It was designed as a kind of \"<span class=\"highlightedWAIText\">successor</span>\" to the " +
+            "<span class=\"highlightedWAIText\">GSB</span> project — where GSB handled payment " +
+            "declarations from <span class=\"highlightedWAIText\">medical representatives</span>, CGB handled the " +
+            "actual payment processing.<br><br>We started by building <span class=\"highlightedWAIText\">endpoints</span> " +
+            "to generate <span class=\"highlightedWAIText\">IBANs</span> and validate them according to " +
+            "<span class=\"highlightedWAIText\">banking standards</span>. We also " +
+            "implemented endpoints to list all accounts, using <span class=\"highlightedWAIText\">design patterns</span> " +
+            "like <span class=\"highlightedWAIText\">DTOs</span> to keep the " +
+            "architecture clean and scalable.<br><br>The two core features of the <span class=\"highlightedWAIText\">API</span> " +
+            "were:<br><br>- <span class=\"highlightedWAIText\">Transfer</span>: an endpoint that allowed " +
+            "us to transfer funds from one IBAN to another. Each transaction " +
+            "was logged into a file for tracking purposes.<br><br>- <span class=\"highlightedWAIText\">TransferLot</span>: " +
+            "since GSB needed to process " +
+            "many payments in one go (paying multiple medical reps at once), we built a batch " +
+            "endpoint that could send money from a single account to multiple recipients — each with " +
+            "their own IBAN and amount — in one <span class=\"highlightedWAIText\">atomic transaction</span>." +
+            "<br><br>This project was my first dive " +
+            "into <span class=\"highlightedWAIText\">Spring Boot</span> and <span class=\"highlightedWAIText\">REST API design</span>. " +
+            "It was especially satisfying to build it within the " +
+            "same context as GSB, since it gave me a clearer view of how different systems can work " +
+            "together in a broader software ecosystem."
     },
 };
 
