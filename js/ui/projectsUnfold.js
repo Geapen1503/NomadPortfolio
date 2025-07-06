@@ -88,11 +88,51 @@ const projectData = {
     },
     alkubot: {
         title: "Alkubot",
-        text: "Bot Discord en Python utilisant discord.py, commandes modération, musique et mini-jeux."
+        text: "Alkubot is one of the very first \"<span class=\"highlightedWAIText\">apps</span>\" I ever built. " +
+            "I started working on it right after finishing <span class=\"highlightedWAIText\">Los Tortillas Hermanos</span>, " +
+            "still in high school, right around the time we began " +
+            "learning <span class=\"highlightedWAIText\">Python</span> in class.<br><br>I wanted " +
+            "something simple and useful — a <span class=\"highlightedWAIText\">Discord bot</span> " +
+            "to help manage <span class=\"highlightedWAIText\">servers</span>, including the one we had " +
+            "for our classroom. So I started " +
+            "adding features as they came to mind: basic <span class=\"highlightedWAIText\">role distribution</span>, " +
+            "<span class=\"highlightedWAIText\">auto-moderation</span> " +
+            "with a <span class=\"highlightedWAIText\">ban word</span> system, a basic <span class=\"highlightedWAIText\">translation</span> " +
+            "feature, some <span class=\"highlightedWAIText\">random quotes</span>, <span class=\"highlightedWAIText\">weather " +
+            "info</span>, even a <span class=\"highlightedWAIText\">level system</span>. There was also a little welcome " +
+            "message when people " +
+            "joined or left, and I tried my hand at polls and <span class=\"highlightedWAIText\">surveys</span> too." +
+            "<br><br>Now, let’s be honest: this <span class=\"highlightedWAIText\">wasn’t</span> " +
+            "exactly <span class=\"highlightedWAIText\">clean code</span>. It was " +
+            "<span class=\"highlightedWAIText\">messy</span>, <span class=\"highlightedWAIText\">full of shortcuts</span>, " +
+            "and written with the enthusiasm of someone who had just discovered <span class=\"highlightedWAIText\">if statements</span>. " +
+            "But that’s exactly why I love it — it represents my <span class=\"highlightedWAIText\">first steps</span> into building " +
+            "<span class=\"highlightedWAIText\">non-web tools</span>, and it showed me how far you can go just by being " +
+            "<span class=\"highlightedWAIText\">curious</span> and <span class=\"highlightedWAIText\">motivated</span>.<br><br>" +
+            "It’s not a polished project by any means, but it taught me a lot — and it still makes me smile when I look back at it."
     },
     oldPortfolio: {
         title: "Old Space Portfolio",
-        text: "My old portfolio that I made during Highschool",
+        text: "This is my <span class=\"highlightedWAIText\">old portfolio</span>, the first one I " +
+            "ever published — built around a <span class=\"highlightedWAIText\">space theme</span> that " +
+            "I was really into at the time.<br><br>The idea was to create something " +
+            "simple yet immersive. " +
+            "<span class=\"highlightedWAIText\">Stars</span> would appear randomly across a transparent " +
+            "<span class=\"highlightedWAIText\">canvas</span>, and there was this sphere that flipped between " +
+            "my face and the planet Mercury with the moon rotating around it. It had its charm, and " +
+            "for some time, I really loved the " +
+            "atmosphere it gave off.<br><br>It <span class=\"highlightedWAIText\">evolved</span> little by little " +
+            "over the years, but eventually, it just didn’t feel like me anymore. As I gained experience, worked on more serious " +
+            "projects, and started to figure out the kind of developer I wanted to be, this " +
+            "version stopped being representative of where I was headed.<br><br>That said, it still " +
+            "means a lot to me. It got me through my <span class=\"highlightedWAIText\">Bac Pro SN RISC</span> and " +
+            "<span class=\"highlightedWAIText\">BTS SIO SLAM</span> oral " +
+            "exams, and it marked the moment where I began treating development as more than " +
+            "just a hobby.<br><br>After my last exam, I knew it was time to move on — so I " +
+            "\"<span class=\"highlightedWAIText\">archived</span>\" " +
+            "this version, and started building the one you're browsing right now, powered by " +
+            "<span class=\"highlightedWAIText\">Three.js</span>. This old space-themed portfolio now feels more like a time " +
+            "capsule — a snapshot of where my journey began.",
         img: "old-portfolio.png"
     },
     gsb: {
