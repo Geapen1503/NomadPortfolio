@@ -2,10 +2,10 @@ const projectData = {
     jarod57: {
         title: "Jarod'57",
         text: "Jarod'57 was the first <span class=\"highlightedWAIText\">3D game</span> I built using " +
-            "<span class=\"highlightedWAIText\">Unity</span>.<br><br>" +
+            "<span class=\"highlightedWAIText\">Unity</span>. " +
             "It’s a <span class=\"highlightedWAIText\">third-person open-world adventure</span> set on a mysterious island " +
             "— think a mix between <span class=\"highlightedWAIText\">tropical</span> " +
-            "and <span class=\"highlightedWAIText\">desert</span> vibes, somewhere between Mexico and nowhere." +
+            "and <span class=\"highlightedWAIText\">desert</span> vibes, somewhere between Mexico and nowhere. " +
             "<br><br>The game was never officially released — it was a super <span class=\"highlightedWAIText\">ambitious</span> " +
             "project, especially for a first. But I learned a ton from it, and it really " +
             "helped me get comfortable with Unity.<br><br>Jarod'57 " +
@@ -186,7 +186,7 @@ const projectData = {
 
 const detailBox = document.getElementById('detailBox');
 const bottomBox = document.querySelector('.projectBottomBox');
-const cards     = document.querySelectorAll('.projectCard');
+const cards = document.querySelectorAll('.projectCard');
 
 let currentId = null;
 
