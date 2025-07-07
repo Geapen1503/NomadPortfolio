@@ -27,6 +27,8 @@ jobs:
       - name: Build site to docs/
         run: npx vite build
 
+      - name: Write CNAME file
+        run: echo "gilabert-theo.fr" > docs/CNAME
 
       - name: Commit and push docs/
         run: |
