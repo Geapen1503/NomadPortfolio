@@ -1127,7 +1127,9 @@ img.workCardLinkImg:hover {
     justify-content: center;
     align-items: center;
 
-    background-color: var(--light-terracota);
+    background:
+            mediumaquamarine
+            url('../src/img/transparentTextures/cartographer.png');
 }
 
 .internalTravelBox {
@@ -1171,7 +1173,7 @@ p.travelBoxTitle {
     margin-right: 25vw;
     z-index: 3;
     text-align: center;
-    color: var(--mid-coal);
+    color: var(--ivory-white);
 }
 
 .dots {
