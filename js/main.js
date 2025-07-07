@@ -44,8 +44,10 @@ initModels()
 
         document.body.classList.add('loaded');
 
-        const mask = document.getElementById('loading-mask');
-        if (mask) mask.remove();
+        setTimeout(() => {
+            const mask = document.getElementById('loading-mask');
+            if (mask) mask.remove();
+        }, 2000);
     })
     .catch(err => {
         console.error('Erreur au chargement des modèles :', err);
