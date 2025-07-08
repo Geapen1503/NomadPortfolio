@@ -746,29 +746,26 @@ p.myProjectsDefaultText{
 }
 .detail-action-buttons {
     display: flex;
-    justify-content: center;
+    width: 15vw;
+    height: 5vw;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
+    justify-content: space-evenly;
 }
+
 .detail-open-images {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: none;
-    background: none;
     cursor: pointer;
-    padding: 0;
 }
 .detail-open-images img {
-    width: 100%;
-    height: 100%;
+    width: 4.25vw;
+    height: 4.25vw;
 }
 .detail-github-link {
     display: inline-block;
 }
 .detail-github-link img {
-    width: 2rem;
-    height: 2rem;
+    width: 3.9vw;
+    height: 3.9vw;
 }
 
 /* ProjectBox Images Slides Ending */
@@ -1826,6 +1823,35 @@ a.arrowUpButton:hover {
         border-radius: 2vw;
         line-height: 1;
     }
+
+    /* ProjectBox Images Slides Beginning */
+
+    .detail-action-buttons {
+        display: flex;
+        width: 55vw;
+        height: 15vw;
+        margin-top: 5vw;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .detail-open-images {
+        cursor: pointer;
+    }
+    .detail-open-images img {
+        width: 12.25vw;
+        height: 12.25vw;
+    }
+    .detail-github-link {
+        display: inline-block;
+    }
+    .detail-github-link img {
+        width: 11.9vw;
+        height: 11.9vw;
+    }
+
+    /* ProjectBox Images Slides Ending */
 
     /* ProjectBox Ending */
 

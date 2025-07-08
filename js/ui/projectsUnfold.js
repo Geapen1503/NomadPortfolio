@@ -57,7 +57,8 @@ const projectData = {
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png"
-        ]
+        ],
+        github: 'https://github.com/Jarod-57',
     },
     blogai: {
         title: "BlogAI",
@@ -76,7 +77,8 @@ const projectData = {
             "There’s a lot more going on under the hood, but to keep it short: this project was a deep dive into " +
             "<span class=\"highlightedWAIText\">automation</span>, API design, and <span class=\"highlightedWAIText\">prompt engineering</span>.<br><br>" +
             "It’s definitely one of the most rewarding things I’ve worked on, and I learned a lot from it.<br><br>" +
-            "If you’re curious, you can check it out on my <span class=\"highlightedWAIText\">GitHub</span>!"
+            "If you’re curious, you can check it out on my <span class=\"highlightedWAIText\">GitHub</span>!",
+        github: 'https://github.com/Geapen1503/BlogAI_NodeJS',
     },
     "los-tortillas-hermanos": {
         title: "Los-Tortillas-Hermanos",
@@ -97,7 +99,8 @@ const projectData = {
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png"
-        ]
+        ],
+        github: 'https://github.com/Geapen1503/Los-Tortillas-Hermanos_v1.6',
     },
     alkubot: {
         title: "Alkubot",
@@ -150,7 +153,8 @@ const projectData = {
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png"
-        ]
+        ],
+        github: 'https://github.com/Geapen1503/PortfolioSIO/',
     },
     gsb: {
         title: "GSB",
@@ -175,7 +179,8 @@ const projectData = {
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png",
             "./src/img/logoLosTortillas.png"
-        ]
+        ],
+        github: 'https://github.com/Geapen1503/GSB_SIO',
     },
     cgb: {
         title: "CGB",
@@ -201,7 +206,8 @@ const projectData = {
             "into <span class=\"highlightedWAIText\">Spring Boot</span> and <span class=\"highlightedWAIText\">REST API design</span>. " +
             "It was especially satisfying to build it within the " +
             "same context as GSB, since it gave me a clearer view of how different systems can work " +
-            "together in a broader software ecosystem."
+            "together in a broader software ecosystem.",
+        github: 'https://github.com/Geapen1503/CreditGeneralGSB',
     },
 };
 
@@ -218,9 +224,9 @@ function buildDetailHtml(data, id) {
   `;
 
     if (data.imgs) {
-        html += `<button class="detail-open-images" data-action="open-images">
+        html += `<a class="detail-open-images" data-action="open-images">
                <img src="/src/img/svg/plus-icon-orange.svg" alt="Open images">
-             </button>`;
+             </a>`;
     }
 
     if (data.github) {
