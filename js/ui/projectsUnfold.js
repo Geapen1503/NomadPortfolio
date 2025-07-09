@@ -1,3 +1,6 @@
+import plusIconOrangeUrl from '/src/img/svg/plus-icon-orange.svg';
+import githubIconOrangeUrl from '/src/img/svg/github-icon-orange.svg';
+
 const projectData = {
     jarod57: {
         title: "Jarod'57",
@@ -205,13 +208,13 @@ function buildDetailHtml(data, id) {
 
     if (data.imgs) {
         html += `<a class="detail-open-images" data-action="open-images">
-               <img src="/src/img/svg/plus-icon-orange.svg">
+               <img src="${plusIconOrangeUrl}">
              </a>`;
     }
 
     if (data.github) {
         html += `<a href="${data.github}" target="_blank" class="detail-github-link">
-               <img src="/src/img/svg/github-icon-orange.svg">
+               <img src="${githubIconOrangeUrl}">
              </a>`;
     }
 
