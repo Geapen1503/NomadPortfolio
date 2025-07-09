@@ -24,11 +24,11 @@ const projectData = {
             "<br><br>I ended up reusing a lot of what I built in " +
             "<span class=\"highlightedWAIText\">Jarod'57</span>, and the new game — set " +
             "on a smaller <span class=\"highlightedWAIText\">island</span> — is way more doable.",
-        imgs: [
+        /*imgs: [
             "./src/img/logoLosTortillas.png",
             "./src/img/logoJarod57.png",
             "./src/img/logoTavernMan1.png"
-        ],
+        ],*/
         github: 'https://github.com/Jarod-57',
     },
     tavernman: {
@@ -53,11 +53,6 @@ const projectData = {
             "and world-building. <br><br>My goal is to finish and <span class=\"highlightedWAIText\">release</span> " +
             "this game, and finally achieve a long-time dream: publishing a full " +
             "<span class=\"highlightedWAIText\">indie title</span> of my own.",
-        imgs: [
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png"
-        ],
         github: 'https://github.com/Jarod-57',
     },
     blogai: {
@@ -95,11 +90,6 @@ const projectData = {
             "New Mexico. It also taught me the basics of PHP, <span class=\"highlightedWAIText\">databases</span>, " +
             "and <span class=\"highlightedWAIText\">backend</span> logic — and looking back, it definitely helped " +
             "spark my decision to pursue computer science more seriously.",
-        imgs: [
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png"
-        ],
         github: 'https://github.com/Geapen1503/Los-Tortillas-Hermanos_v1.6',
     },
     alkubot: {
@@ -149,11 +139,6 @@ const projectData = {
             "this version, and started building the one you're browsing right now, powered by " +
             "<span class=\"highlightedWAIText\">Three.js</span>. This old space-themed portfolio now feels more like a time " +
             "capsule — a snapshot of where my journey began.",
-        imgs: [
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png"
-        ],
         github: 'https://github.com/Geapen1503/PortfolioSIO/',
     },
     gsb: {
@@ -175,11 +160,6 @@ const projectData = {
             "It also helped me solidify my skills in <span class=\"highlightedWAIText\">PHP</span> " +
             "and <span class=\"highlightedWAIText\">MySQL</span>, and gave me hands-on experience " +
             "with structured backend logic and real-world business flows.",
-        imgs: [
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png",
-            "./src/img/logoLosTortillas.png"
-        ],
         github: 'https://github.com/Geapen1503/GSB_SIO',
     },
     cgb: {
@@ -225,13 +205,13 @@ function buildDetailHtml(data, id) {
 
     if (data.imgs) {
         html += `<a class="detail-open-images" data-action="open-images">
-               <img src="/src/img/svg/plus-icon-orange.svg" alt="Open images">
+               <img src="/src/img/svg/plus-icon-orange.svg">
              </a>`;
     }
 
     if (data.github) {
         html += `<a href="${data.github}" target="_blank" class="detail-github-link">
-               <img src="/src/img/svg/github-icon-orange.svg" alt="GitHub logo">
+               <img src="/src/img/svg/github-icon-orange.svg">
              </a>`;
     }
 
