@@ -24,7 +24,12 @@ const projectData = {
             "<br><br>I ended up reusing a lot of what I built in " +
             "<span class=\"highlightedWAIText\">Jarod'57</span>, and the new game — set " +
             "on a smaller <span class=\"highlightedWAIText\">island</span> — is way more doable.",
-        img: "jarod57-detail.jpg"
+        /*imgs: [
+            "./src/img/logoLosTortillas.png",
+            "./src/img/logoJarod57.png",
+            "./src/img/logoTavernMan1.png"
+        ],*/
+        github: 'https://github.com/Jarod-57',
     },
     tavernman: {
         title: "TavernMan",
@@ -48,7 +53,7 @@ const projectData = {
             "and world-building. <br><br>My goal is to finish and <span class=\"highlightedWAIText\">release</span> " +
             "this game, and finally achieve a long-time dream: publishing a full " +
             "<span class=\"highlightedWAIText\">indie title</span> of my own.",
-        img: "tavernman-detail.png"
+        github: 'https://github.com/Jarod-57',
     },
     blogai: {
         title: "BlogAI",
@@ -67,7 +72,8 @@ const projectData = {
             "There’s a lot more going on under the hood, but to keep it short: this project was a deep dive into " +
             "<span class=\"highlightedWAIText\">automation</span>, API design, and <span class=\"highlightedWAIText\">prompt engineering</span>.<br><br>" +
             "It’s definitely one of the most rewarding things I’ve worked on, and I learned a lot from it.<br><br>" +
-            "If you’re curious, you can check it out on my <span class=\"highlightedWAIText\">GitHub</span>!"
+            "If you’re curious, you can check it out on my <span class=\"highlightedWAIText\">GitHub</span>!",
+        github: 'https://github.com/Geapen1503/BlogAI_NodeJS',
     },
     "los-tortillas-hermanos": {
         title: "Los-Tortillas-Hermanos",
@@ -84,7 +90,7 @@ const projectData = {
             "New Mexico. It also taught me the basics of PHP, <span class=\"highlightedWAIText\">databases</span>, " +
             "and <span class=\"highlightedWAIText\">backend</span> logic — and looking back, it definitely helped " +
             "spark my decision to pursue computer science more seriously.",
-        img: "los-tortillas-detail.jpg"
+        github: 'https://github.com/Geapen1503/Los-Tortillas-Hermanos_v1.6',
     },
     alkubot: {
         title: "Alkubot",
@@ -133,7 +139,7 @@ const projectData = {
             "this version, and started building the one you're browsing right now, powered by " +
             "<span class=\"highlightedWAIText\">Three.js</span>. This old space-themed portfolio now feels more like a time " +
             "capsule — a snapshot of where my journey began.",
-        img: "old-portfolio.png"
+        github: 'https://github.com/Geapen1503/PortfolioSIO/',
     },
     gsb: {
         title: "GSB",
@@ -154,7 +160,7 @@ const projectData = {
             "It also helped me solidify my skills in <span class=\"highlightedWAIText\">PHP</span> " +
             "and <span class=\"highlightedWAIText\">MySQL</span>, and gave me hands-on experience " +
             "with structured backend logic and real-world business flows.",
-        img: "gsb.png"
+        github: 'https://github.com/Geapen1503/GSB_SIO',
     },
     cgb: {
         title: "CGB",
@@ -180,69 +186,127 @@ const projectData = {
             "into <span class=\"highlightedWAIText\">Spring Boot</span> and <span class=\"highlightedWAIText\">REST API design</span>. " +
             "It was especially satisfying to build it within the " +
             "same context as GSB, since it gave me a clearer view of how different systems can work " +
-            "together in a broader software ecosystem."
+            "together in a broader software ecosystem.",
+        github: 'https://github.com/Geapen1503/CreditGeneralGSB',
     },
 };
 
 const detailBox = document.getElementById('detailBox');
 const bottomBox = document.querySelector('.projectBottomBox');
 const cards = document.querySelectorAll('.projectCard');
-
 let currentId = null;
 
-function buildDetailHtml(data) {
+function buildDetailHtml(data, id) {
     let html = `
     <h2 class="detail-title">${data.title}</h2>
     <p class="detail-text">${data.text}</p>
+    <div class="detail-action-buttons">
   `;
 
-    if (data.img) html += `<img class="detail-image" src="${data.img}" alt="${data.title}">`;
+    if (data.imgs) {
+        html += `<a class="detail-open-images" data-action="open-images">
+               <img src="/src/img/svg/plus-icon-orange.svg">
+             </a>`;
+    }
 
-    html += `<span class="detail-close">&#10095;</span>`;
+    if (data.github) {
+        html += `<a href="${data.github}" target="_blank" class="detail-github-link">
+               <img src="/src/img/svg/github-icon-orange.svg">
+             </a>`;
+    }
+
+    html += `
+    </div>
+    <span class="detail-close">&#10095;</span>
+  `;
+
     return html;
 }
 
-function attachCloseHandler() {
-    const btn = detailBox.querySelector('.detail-close');
-    btn.addEventListener('click', () => {
-        bottomBox.classList.remove('open');
-        currentId = null;
-    });
+function attachDetailHandlers(id) {
+    currentId = id;
+    detailBox.querySelector('.detail-close')
+        .addEventListener('click', closePopupAndDetail);
+
+    const openBtn = detailBox.querySelector('[data-action="open-images"]');
+
+    if (openBtn) openBtn.addEventListener('click', () => openImagePopup(id));
+}
+
+function closePopupAndDetail() {
+    bottomBox.classList.remove('open');
+    currentId = null;
 }
 
 cards.forEach(card => {
     card.addEventListener('click', () => {
-        const id   = card.dataset.id;
-        const data = projectData[id];
-        if (!data) return;
+        const id = card.dataset.id;
+        const data = projectData[id]; if (!data) return;
 
-        if (bottomBox.classList.contains('open') && currentId === id) {
-            bottomBox.classList.remove('open');
-            currentId = null;
-            return;
-        }
-
+        if (bottomBox.classList.contains('open') && currentId === id) { closePopupAndDetail(); return; }
         if (bottomBox.classList.contains('open') && currentId !== id) {
             bottomBox.classList.remove('open');
-
-            const onEnd = e => {
+            detailBox.addEventListener('transitionend', function onEnd(e) {
                 if (e.propertyName === 'height') {
                     detailBox.removeEventListener('transitionend', onEnd);
-                    detailBox.innerHTML = buildDetailHtml(data);
-
-                    attachCloseHandler();
-
+                    detailBox.innerHTML = buildDetailHtml(data, id);
+                    attachDetailHandlers(id);
                     bottomBox.classList.add('open');
-                    currentId = id;
                 }
-            };
-            detailBox.addEventListener('transitionend', onEnd);
+            });
             return;
         }
 
-        currentId = id;
-        detailBox.innerHTML = buildDetailHtml(data);
-        attachCloseHandler();
+        detailBox.innerHTML = buildDetailHtml(data, id);
+        attachDetailHandlers(id);
         bottomBox.classList.add('open');
     });
 });
+
+const overlay = document.getElementById('imagePopupOverlay');
+const popupCarousel = document.getElementById('popupCarousel');
+let currentSlideIndex = 0;
+
+function openImagePopup(id) {
+    const data = projectData[id];
+    if (!data?.imgs) return;
+
+    popupCarousel.innerHTML = '';
+    data.imgs.forEach((src, idx) => {
+        const slide = document.createElement('div');
+        slide.className = 'popup-slide';
+        slide.innerHTML = `<img src="${src}" alt="${data.title} screenshot ${idx+1}">`;
+        popupCarousel.appendChild(slide);
+    });
+    currentSlideIndex = 0;
+    showSlide(0);
+
+    document.body.style.overflow = 'hidden';
+
+    overlay.classList.add('visible');
+}
+
+function showSlide(n) {
+    const slides = popupCarousel.querySelectorAll('.popup-slide');
+
+    if (!slides.length) return;
+
+    currentSlideIndex = (n + slides.length) % slides.length;
+    slides.forEach(sl => sl.classList.remove('active'));
+    slides[currentSlideIndex].classList.add('active');
+}
+
+function changeSlide(n) {
+    showSlide(currentSlideIndex + n);
+}
+
+function closeImagePopup() {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+}
+
+window.openImagePopup = openImagePopup;
+window.changeSlide = changeSlide;
+
+overlay.querySelector('.popup-close').addEventListener('click', closeImagePopup);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeImagePopup(); });

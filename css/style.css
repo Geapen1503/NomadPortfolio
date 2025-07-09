@@ -685,6 +685,91 @@ p.myProjectsDefaultText{
     line-height: 1;
 }
 
+/* ProjectBox Images Slides Beginning */
+
+.image-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.image-popup-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.popup-carousel {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    overflow: hidden;
+}
+.popup-slide {
+    display: none;
+    width: 100%;
+}
+.popup-slide.active {
+    display: block;
+}
+.popup-slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+.popup-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+.popup-arrow.left { left: 1rem; }
+.popup-arrow.right { right: 1rem; }
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+.detail-action-buttons {
+    display: flex;
+    width: 15vw;
+    height: 5vw;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.detail-open-images {
+    cursor: pointer;
+}
+.detail-open-images img {
+    width: 4.25vw;
+    height: 4.25vw;
+}
+.detail-github-link {
+    display: inline-block;
+}
+.detail-github-link img {
+    width: 3.9vw;
+    height: 3.9vw;
+}
+
+/* ProjectBox Images Slides Ending */
+
 /* ProjectBox Ending */
 
 /* beginning DegreeBox */
@@ -1738,6 +1823,35 @@ a.arrowUpButton:hover {
         border-radius: 2vw;
         line-height: 1;
     }
+
+    /* ProjectBox Images Slides Beginning */
+
+    .detail-action-buttons {
+        display: flex;
+        width: 55vw;
+        height: 15vw;
+        margin-top: 5vw;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .detail-open-images {
+        cursor: pointer;
+    }
+    .detail-open-images img {
+        width: 12.25vw;
+        height: 12.25vw;
+    }
+    .detail-github-link {
+        display: inline-block;
+    }
+    .detail-github-link img {
+        width: 11.9vw;
+        height: 11.9vw;
+    }
+
+    /* ProjectBox Images Slides Ending */
 
     /* ProjectBox Ending */
 
