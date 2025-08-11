@@ -2140,6 +2140,7 @@ a.arrowUpButton:hover {
     /* Beginning TravelBox */
 
     .travelBox {
+        position: relative;
         width: 100%;
         height: 280vw;
     }
@@ -2156,6 +2157,13 @@ a.arrowUpButton:hover {
         height: 100%;
     }
 
+    div.travelBoxTransparentFilter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+    }
+
     p.travelBoxTitle {
         font-family: "Orbitron", sans-serif;
         font-weight: 600;
@@ -2164,7 +2172,7 @@ a.arrowUpButton:hover {
         margin-left: 5vw;
         margin-right: 5vw;
         text-align: center;
-        color: var(--mid-coal);
+        color: var(--ivory-white);
     }
 
     /* Ending TravelBox */
