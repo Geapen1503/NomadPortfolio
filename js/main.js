@@ -4,6 +4,7 @@ import {updateSun} from './three/sky.js';
 import {animate} from './three/animate.js';
 import './three/water.js';
 import './three/globe.js';
+import { initCameraControls } from './three/cameraControls.js';
 import '../js/globe.gl.min.js';
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
@@ -20,16 +21,16 @@ initModels()
         animate();
 
         const canvasWrapper = document.getElementById('canvasWrapperBox');
-        let animationRunning = true;
+        const canvas = document.getElementById('threeCanvas');
 
+        initCameraControls(canvasWrapper, canvas);
+
+        let animationRunning = true;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 animationRunning = entry.isIntersecting;
             });
-        }, {
-            root: null,
-            threshold: 0.1
-        });
+        }, { root: null, threshold: 0.1 });
 
         if (canvasWrapper) observer.observe(canvasWrapper);
 
@@ -50,7 +51,7 @@ initModels()
         }, 2000);
     })
     .catch(err => {
-        console.error('Erreur au chargement des modèles :', err);
+        console.error('Error while loading models :', err);
     });
 
 window.addEventListener('resize', onWindowResize, false);

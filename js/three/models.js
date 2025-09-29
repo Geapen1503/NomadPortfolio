@@ -30,8 +30,7 @@ function createModel(xPosition) {
 }
 
 async function initModels() {
-    const visibleBridges = 3;
-    const offset = -spacing * visibleBridges;
+    const offset = -spacing * (numberOfModels - 1) / 2;
 
     for (let i = 0; i < numberOfModels; i++) {
         const model = await createModel(i * spacing + offset);
