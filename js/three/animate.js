@@ -27,7 +27,7 @@ function animate() {
         models.forEach((model) => {
             model.position.x -= moveSpeed;
 
-            if (model.position.x < -spacing * 2) {
+            if (model.position.x < -spacing * 3) {
                 const lastModel = models[models.length - 1];
                 model.position.x = lastModel.position.x + spacing;
                 models.push(models.shift());
