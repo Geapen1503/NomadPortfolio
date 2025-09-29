@@ -2,8 +2,18 @@
 
 *{
     font-family: sans-serif;
-    user-select: none;
+    user-select: text;
     scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--alku-transparent-orange);
+    color: var(--ivory-white);
+}
+
+::-moz-selection {
+    background: var(--alku-transparent-orange);
+    color: var(--ivory-white);
 }
 
 html {
@@ -30,6 +40,7 @@ html {
     --deep-salmon: #D6724A;
     --mid-coal: #3C3C3C;
     --elephant-orange: #B78F30;
+    --alku-transparent-orange: rgba(203, 128, 17, 0.7);
 }
 
 body {
