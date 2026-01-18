@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 import Globe from 'globe.gl';
 import earthBlueMarble from '/src/img/transparentTextures/earth-blue-marble.jpg';
-import earthTopology from '/src/img/transparentTextures/earth-topology.png';
+//import earthTopology from '/src/img/transparentTextures/earth-topology.png';
 import clouds from '/src/img/transparentTextures/clouds.png';
 
 const world = new Globe(document.getElementById('globeWindow'), { animateIn: false })
     .globeImageUrl(earthBlueMarble)
-    .bumpImageUrl(earthTopology);
+    //.bumpImageUrl(earthTopology);
 
 world.controls().enableZoom = false;
 world.controls().autoRotate = true;
