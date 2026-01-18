@@ -1,11 +1,11 @@
-import {scene, camera, renderer, onWindowResize} from './three/scene.js';
+import {onWindowResize} from './three/scene.js';
 import {initModels, loadElephant} from './three/models.js';
 import {updateSun} from './three/sky.js';
 import {animate} from './three/animate.js';
 import './three/water.js';
 import './three/globe.js';
 import { initCameraControls } from './three/cameraControls.js';
-import '../js/globe.gl.min.js';
+//import '../js/globe.gl.min.js'; never import this again this is insanity
 import './ui/navbar.js';
 import './ui/burgerMenu.js';
 //import './ui/scrollLogic.js';

@@ -3,7 +3,7 @@ import { Water } from 'three/examples/jsm/objects/Water.js';
 import { scene } from './scene.js';
 import waterNormalsUrl from '/src/textures/waternormals.jpg?url';
 
-const waterGeometry = new THREE.PlaneGeometry(10000, 10000);
+const waterGeometry = new THREE.PlaneGeometry(1000, 1000);
 
 const waterNormals = new THREE.TextureLoader().load(
     waterNormalsUrl,
@@ -25,7 +25,7 @@ const water = new Water(waterGeometry, {
 
 water.material.uniforms['size'] = { value: 10.0 };
 water.rotation.x = -Math.PI / 2;
-water.position.y = -10.3;
+water.position.y = -2.1;
 scene.add(water);
 
 /*
