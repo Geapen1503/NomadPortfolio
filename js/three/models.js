@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { scene, camera } from './scene.js';
 import bridgeModelUrl from '/src/model/bridge_model.glb?url';
-import elephantModelUrl from '/src/model/elephant_transition.glb?url';
+import elephantModelUrl from '/src/model/elephant_transition-opt.glb?url';
 
 const loader = new GLTFLoader();
 const models = [];
