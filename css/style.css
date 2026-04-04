@@ -1094,6 +1094,11 @@ img.workCardLogo {
     height: 14vw;
 }
 
+img.workCardPoleSudLogo {
+    width: 10vw;
+    height: 7vw;
+}
+
 img.workCardOrtrosLogo {
     width: 12vw;
     height: 7vw;
@@ -2082,6 +2087,11 @@ a.arrowUpButton:hover {
     img.workCardLogo {
         width: 14vw;
         height: 14vw;
+    }
+
+    img.workCardPoleSudLogo {
+        width: 30vw;
+        height: 24vw;
     }
 
     img.workCardOrtrosLogo {
