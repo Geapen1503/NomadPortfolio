@@ -53,7 +53,7 @@ const projectData = {
             "and world-building. <br><br>My goal is to finish and <span class=\"highlightedWAIText\">release</span> " +
             "this game, and finally achieve a long-time dream: publishing a full " +
             "<span class=\"highlightedWAIText\">indie title</span> of my own.",
-        github: 'https://github.com/Jarod-57',
+        github: 'https://github.com/Geapen1503/TavernMan_Scripts',
     },
     blogai: {
         title: "BlogAI",
