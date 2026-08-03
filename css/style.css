@@ -339,6 +339,16 @@ div.bottomIntroBox {
     background-color: transparent;
 }
 
+.navbarBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .headerBoxShadow{
     backdrop-filter: blur(4px);
     box-shadow: 0px 0px 10px black;
@@ -790,6 +800,14 @@ p.myProjectsDefaultText{
     display: inline-block;
 }
 .detail-github-link img {
+    width: 3.9vw;
+    height: 3.9vw;
+}
+
+.detail-url-link {
+    display: inline-block;
+}
+.detail-url-link img {
     width: 3.9vw;
     height: 3.9vw;
 }
@@ -1594,8 +1612,9 @@ a.arrowUpButton:hover {
         transform: translateX(-50%);
         width: 40vw;
         height: 55vw;
-        background-color: transparent;
-        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         box-shadow: 0px 0px 10px black;
         border-radius: 1vw;
         opacity: 0;
@@ -1628,10 +1647,6 @@ a.arrowUpButton:hover {
 
     #navbarBox {
         height: 15vw;
-    }
-
-    .buttonBox{
-
     }
 
     .navButton{
@@ -1884,6 +1899,14 @@ a.arrowUpButton:hover {
         display: inline-block;
     }
     .detail-github-link img {
+        width: 11.9vw;
+        height: 11.9vw;
+    }
+
+    .detail-url-link {
+        display: inline-block;
+    }
+    .detail-url-link img {
         width: 11.9vw;
         height: 11.9vw;
     }

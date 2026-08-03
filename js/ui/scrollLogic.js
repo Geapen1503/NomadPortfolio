@@ -18,11 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
-            if (
-                isOverOrange(burger) ||
-                (buttonBox.classList.contains("show") && isOverOrange(buttonBox))
-            )
-                navbar.classList.add("on-orange");
+            if (isOverOrange(burger) || (buttonBox.classList.contains("show") && isOverOrange(buttonBox))) navbar.classList.add("on-orange");
             else navbar.classList.remove("on-orange");
         } else {
             if (isOverOrange(navbar)) navbar.classList.add("on-orange");
@@ -32,5 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", updateStyles);
     window.addEventListener("resize", updateStyles);
-    updateStyles();
+
 });
