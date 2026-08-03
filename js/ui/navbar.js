@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const canvasBox = document.getElementById('canvasWrapperBox');
-    const navbar = document.getElementById('navbarBox');
+    const navbarBg = document.querySelector('.navbarBg');
     const internalMainBox = document.getElementById("InternalMainBox");
     let firstScrollDone = false;
     let scrollInProgress = false;
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarInitialTop = internalMainBox.getBoundingClientRect().top + window.pageYOffset;
 
     function updateNavbarShadow() {
-        if (window.pageYOffset >= navbarInitialTop) navbar.classList.add("headerBoxShadow");
-        else navbar.classList.remove("headerBoxShadow");
+        if (window.pageYOffset >= navbarInitialTop) navbarBg.classList.add("headerBoxShadow");
+        else navbarBg.classList.remove("headerBoxShadow");
     }
 
     updateNavbarShadow();
@@ -18,8 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNavbarShadow();
 
         if (window.pageYOffset === 0 && !scrollInProgress) firstScrollDone = false;
-
-        if (window.pageYOffset >= navbarInitialTop) navbar.classList.add("headerBoxShadow");
-        else navbar.classList.remove("headerBoxShadow");
     });
 });

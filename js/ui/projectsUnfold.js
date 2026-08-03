@@ -54,6 +54,7 @@ const projectData = {
             "this game, and finally achieve a long-time dream: publishing a full " +
             "<span class=\"highlightedWAIText\">indie title</span> of my own.",
         github: 'https://github.com/Geapen1503/TavernMan_Scripts',
+        url: 'https://tavernmandev.itch.io/tavernman',
     },
     blogai: {
         title: "BlogAI",
@@ -211,7 +212,13 @@ function buildDetailHtml(data, id) {
 
     if (data.github) {
         html += `<a href="${data.github}" target="_blank" class="detail-github-link">
-               <img src="/src/img/svg/github-icon-orange.svg">
+               <img src="./src/img/svg/github-icon-orange.svg">
+             </a>`;
+    }
+
+    if (data.url) {
+        html += `<a href="${data.url}" target="_blank" class="detail-url-link">
+               <img src="./src/img/svg/internet-globe.svg">
              </a>`;
     }
 
