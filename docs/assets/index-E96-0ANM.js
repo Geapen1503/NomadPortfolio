@@ -5036,9 +5036,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   `;return i.imgs&&(t+=`<a class="detail-open-images" data-action="open-images">
                <img src="/src/img/svg/plus-icon-orange.svg">
              </a>`),i.github&&(t+=`<a href="${i.github}" target="_blank" class="detail-github-link">
-               <img src="./src/img/svg/github-icon-orange.svg">
+               <img src="../src/img/svg/github-icon-orange.svg">
              </a>`),i.url&&(t+=`<a href="${i.url}" target="_blank" class="detail-url-link">
-               <img src="./src/img/svg/internet-globe.svg">
+               <img src="../src/img/svg/internet-globe-orange.svg">
              </a>`),t+=`
     </div>
     <span class="detail-close">&#10095;</span>
