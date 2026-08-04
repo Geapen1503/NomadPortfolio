@@ -789,27 +789,39 @@ p.myProjectsDefaultText{
     justify-content: space-evenly;
 }
 
+.detail-icon {
+    display: inline-block;
+    width: 3.9vw;
+    height: 3.9vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .detail-open-images {
     cursor: pointer;
 }
-.detail-open-images img {
+.detail-open-images span {
     width: 4.25vw;
     height: 4.25vw;
+    background-image: url("../src/img/svg/plus-icon-orange.svg");
 }
 .detail-github-link {
     display: inline-block;
 }
-.detail-github-link img {
+.detail-github-link span {
     width: 3.9vw;
     height: 3.9vw;
+    background-image: url('../src/img/svg/github-icon-orange.svg');
 }
 
 .detail-url-link {
     display: inline-block;
 }
-.detail-url-link img {
+.detail-url-link span {
     width: 3.9vw;
     height: 3.9vw;
+    background-image: url("../src/img/svg/internet-globe-orange.svg");
 }
 
 /* ProjectBox Images Slides Ending */
@@ -1891,14 +1903,14 @@ a.arrowUpButton:hover {
     .detail-open-images {
         cursor: pointer;
     }
-    .detail-open-images img {
+    .detail-open-images span {
         width: 12.25vw;
         height: 12.25vw;
     }
     .detail-github-link {
         display: inline-block;
     }
-    .detail-github-link img {
+    .detail-github-link span {
         width: 11.9vw;
         height: 11.9vw;
     }
@@ -1906,7 +1918,7 @@ a.arrowUpButton:hover {
     .detail-url-link {
         display: inline-block;
     }
-    .detail-url-link img {
+    .detail-url-link span {
         width: 11.9vw;
         height: 11.9vw;
     }
