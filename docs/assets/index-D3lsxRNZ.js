@@ -5034,11 +5034,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     <p class="detail-text">${i.text}</p>
     <div class="detail-action-buttons">
   `;return i.imgs&&(t+=`<a class="detail-open-images" data-action="open-images">
-               <img src="/src/img/svg/plus-icon-orange.svg">
+               <span class="detail-icon icon-open-images"></span>
              </a>`),i.github&&(t+=`<a href="${i.github}" target="_blank" class="detail-github-link">
-               <img src="../src/img/svg/github-icon-orange.svg">
+               <span class="detail-icon icon-github"></span>
              </a>`),i.url&&(t+=`<a href="${i.url}" target="_blank" class="detail-url-link">
-               <img src="../src/img/svg/internet-globe-orange.svg">
+               <span class="detail-icon icon-url-link"></span>
              </a>`),t+=`
     </div>
     <span class="detail-close">&#10095;</span>
