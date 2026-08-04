@@ -192,6 +192,7 @@ const projectData = {
     },
 };
 
+const baseUrl = import.meta.env.BASE_URL;
 const detailBox = document.getElementById('detailBox');
 const bottomBox = document.querySelector('.projectBottomBox');
 const cards = document.querySelectorAll('.projectCard');
@@ -206,19 +207,19 @@ function buildDetailHtml(data, id) {
 
     if (data.imgs) {
         html += `<a class="detail-open-images" data-action="open-images">
-               <img src="/src/img/svg/plus-icon-orange.svg">
+               <span class="detail-icon icon-open-images"></span>
              </a>`;
     }
 
     if (data.github) {
         html += `<a href="${data.github}" target="_blank" class="detail-github-link">
-               <img src="../src/img/svg/github-icon-orange.svg">
+               <span class="detail-icon icon-github"></span>
              </a>`;
     }
 
     if (data.url) {
         html += `<a href="${data.url}" target="_blank" class="detail-url-link">
-               <img src="../src/img/svg/internet-globe-orange.svg">
+               <span class="detail-icon icon-url-link"></span>
              </a>`;
     }
 
